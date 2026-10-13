@@ -27,6 +27,8 @@ The `Refresh profile visuals` workflow maintains repository fallback assets and
 dispatch. GitHub may delay scheduled runs. Both live and fallback calendars use
 the same exact-count parser in `scripts/github-live.mjs`; they validate total,
 date uniqueness/continuity, daily counts, and intensity levels before publishing.
+Each backup run also advances only the live image query revisions in the README
+to retire lingering GitHub proxy copies without changing visible text or order.
 Original repository counts use the API total instead of the first page length.
 
 GitHub contributions include commits, pull requests, issues, and other eligible

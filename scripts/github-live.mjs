@@ -3,6 +3,7 @@ const GITHUB_LOGIN = 'ctrl-pt';
 const CALENDAR_URL = 'https://github.com/users/ctrl-pt/contributions';
 const ACCOUNT_URL = 'https://api.github.com/users/ctrl-pt';
 const REPOS_URL = 'https://api.github.com/users/ctrl-pt/repos';
+const PUBLIC_REPOS_URL = 'https://github.com/ctrl-pt?tab=repositories&type=source';
 const FALLBACK_URL = 'https://raw.githubusercontent.com/ctrl-pt/ctrl-pt/main/data/github.json';
 const SNAPSHOT_TTL_MS = 180_000;
 const STALE_LIMIT_MS = 86_400_000;
@@ -11,6 +12,7 @@ let inflightSnapshot = null;
 let nextAttemptAt = 0;
 let fallbackSnapshot = null;
 let lastSourceError = null;
+let restRetryAt = 0;
 
 function decodeHtml(value) {
   return value.replace(/&(?:amp|quot|apos|lt|gt|nbsp|#\d+|#x[\da-f]+);/gi, entity => {
@@ -158,7 +160,90 @@ function validateSnapshot(data) {
     account, weeks: groupDays(days), totalContributions: computedTotal,
     originalRepoCount, repos, range: [days[0].date, days[days.length - 1].date],
     freshness: data.freshness, source: data.source,
+    ...(['github-public-rest', 'github-public-html'].includes(data.metadataSource) ? { metadataSource: data.metadataSource } : {}),
   };
+}
+
+function exactHtmlCount(value, label) {
+  const text = textOnly(value);
+  if (!/^[\d,]+$/.test(text)) throw new Error(`Missing exact ${label}`);
+  return nonnegativeInteger(Number(text.replace(/,/g, '')), label);
+}
+
+function consistentValue(existing, candidate, label) {
+  if (existing !== null && existing !== candidate) throw new Error(`Inconsistent public ${label}`);
+  return candidate;
+}
+
+// Only the fixed owner's anonymous source-repository page is accepted.
+export function parsePublicMetadata(html, page = 1) {
+  if (typeof html !== 'string' || !Number.isInteger(page) || page < 1) throw new Error('Invalid public profile page');
+  let publicRepos = null;
+  let followers = null;
+  let nextPage = null;
+  for (const match of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+    const attrs = attributes(match[1]);
+    if (attrs['data-tab-item'] === 'repositories') {
+      const counter = match[2].match(/<span\b([^>]*)>([\s\S]*?)<\/span>/i);
+      if (!counter || !attributes(counter[1]).class?.split(/\s+/).includes('Counter')) throw new Error('Missing public repository counter');
+      const count = exactHtmlCount(attributes(counter[1]).title ?? counter[2], 'public repository count');
+      publicRepos = consistentValue(publicRepos, count, 'repository counts');
+    }
+    if (attrs.href === `https://github.com/${GITHUB_LOGIN}?tab=followers` || attrs.href === `/${GITHUB_LOGIN}?tab=followers`) {
+      const counter = match[2].match(/<span\b([^>]*)>([\s\S]*?)<\/span>/i);
+      if (!counter || !/\bfollowers?\b/i.test(textOnly(match[2]))) throw new Error('Missing public follower counter');
+      followers = consistentValue(followers, exactHtmlCount(attributes(counter[1]).title ?? counter[2], 'follower count'), 'follower counts');
+    }
+    if (attrs.class?.split(/\s+/).includes('next_page') || attrs.rel?.split(/\s+/).includes('next')) {
+      const next = new URL(attrs.href, 'https://github.com');
+      const allowedKeys = new Set(['page', 'tab', 'type']);
+      if (next.origin !== 'https://github.com' || next.pathname !== `/${GITHUB_LOGIN}` || next.searchParams.get('tab') !== 'repositories' || next.searchParams.get('type') !== 'source' || [...next.searchParams.keys()].some(key => !allowedKeys.has(key))) {
+        throw new Error('Unexpected public repository pagination URL');
+      }
+      const number = Number(next.searchParams.get('page'));
+      if (!Number.isInteger(number) || number !== page + 1) throw new Error('Invalid public repository page sequence');
+      nextPage = consistentValue(nextPage, number, 'pagination links');
+    }
+  }
+  if (publicRepos === null || followers === null) throw new Error('Missing public account counters');
+  const list = html.slice(html.search(/<div\b[^>]*\bid="user-repositories-list"/i));
+  if (!/<div\b[^>]*\bid="user-repositories-list"/i.test(list)) throw new Error('Missing source repository list');
+  const summary = list.match(/<div\b[^>]*\bclass="[^"]*\buser-repo-search-results-summary\b[^"]*"[^>]*>([\s\S]*?)<\/div>/i);
+  const resultCount = summary && textOnly(summary[1]).match(/^([\d,]+)\s+results?\s+for\s+source\s+repositories\b/i);
+  if (!resultCount) throw new Error('Missing exact source repository total');
+  const originalRepoCount = exactHtmlCount(resultCount[1], 'source repository count');
+  if (originalRepoCount > publicRepos) throw new Error('Source repository count exceeds public repository count');
+  const repos = [];
+  for (const match of list.matchAll(/<li\b([^>]*)>([\s\S]*?)<\/li>/gi)) {
+    const attrs = attributes(match[1]);
+    if (attrs.itemprop !== 'owns') continue;
+    const classes = new Set((attrs.class ?? '').split(/\s+/));
+    if (!classes.has('public') || !classes.has('source') || classes.has('fork')) throw new Error('Unexpected source repository visibility or fork status');
+    let repo = null;
+    for (const anchor of match[2].matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+      const anchorAttrs = attributes(anchor[1]);
+      if (anchorAttrs.itemprop !== 'name codeRepository') continue;
+      const name = textOnly(anchor[2]);
+      if (repo || !/^[\w.-]+$/.test(name) || anchorAttrs.href !== `/${GITHUB_LOGIN}/${name}`) throw new Error('Invalid source repository name or URL');
+      repo = { name, url: `https://github.com/${GITHUB_LOGIN}/${name}` };
+    }
+    if (!repo) throw new Error('Missing source repository identity');
+    const language = match[2].match(/<span\b[^>]*\bitemprop="programmingLanguage"[^>]*>([\s\S]*?)<\/span>/i);
+    repo.primaryLanguage = language ? { name: textOnly(language[1]) } : null;
+    for (const [field, path] of [['stargazerCount', 'stargazers'], ['forkCount', 'forks']]) {
+      let value = null;
+      for (const anchor of match[2].matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+        if (attributes(anchor[1]).href === `/${GITHUB_LOGIN}/${repo.name}/${path}`) value = consistentValue(value, exactHtmlCount(anchor[2], field), field);
+      }
+      // GitHub omits these links when their counts are zero.
+      repo[field] = value ?? 0;
+    }
+    repos.push(repo);
+  }
+  if (new Set(repos.map(repo => repo.name)).size !== repos.length || repos.length > 30 || repos.length > originalRepoCount || (nextPage !== null && repos.length !== 30)) {
+    throw new Error('Invalid or incomplete source repository page');
+  }
+  return { account: { login: GITHUB_LOGIN, followers, public_repos: publicRepos }, originalRepoCount, repos, nextPage };
 }
 
 export function summarizeSnapshot(data) {
@@ -197,7 +282,7 @@ async function githubRequest(url) {
       redirect: 'manual',
     });
     if (!response.ok) {
-      const error = new Error(`Public GitHub source returned ${response.status}`);
+      const error = new Error(`Public GitHub source ${new URL(url).hostname}${new URL(url).pathname} returned ${response.status}`);
       const retryAfter = Number(response.headers.get('Retry-After'));
       const resetAt = Number(response.headers.get('X-RateLimit-Reset')) * 1000;
       if (response.status === 429 || response.status === 403) {
@@ -226,19 +311,60 @@ async function fetchRepositories() {
   throw new Error('Public repository pagination exceeds safety limit');
 }
 
-async function fetchLiveSnapshot() {
-  const [calendar, account, allRepos] = await Promise.all([
-    githubRequest(CALENDAR_URL).then(response => response.text()).then(parseCalendar),
+async function fetchRestMetadata() {
+  const [account, allRepos] = await Promise.all([
     githubRequest(ACCOUNT_URL).then(response => response.json()),
     fetchRepositories(),
   ]);
+  if (account.login?.toLowerCase() !== GITHUB_LOGIN) throw new Error('Unexpected public account owner');
+  nonnegativeInteger(account.followers, 'follower count');
+  nonnegativeInteger(account.public_repos, 'public repository count');
   if (allRepos.length !== account.public_repos) throw new Error('Public repository count changed during retrieval');
   const originals = allRepos.filter(repo => repo.fork === false);
   if (allRepos.some(repo => typeof repo.fork !== 'boolean')) throw new Error('Missing repository fork status');
+  const repos = originals.map(repo => {
+    if (!/^[\w.-]+$/.test(repo.name) || repo.html_url !== `https://github.com/${GITHUB_LOGIN}/${repo.name}`) throw new Error('Invalid public repository identity');
+    return { name: repo.name, url: repo.html_url, stargazerCount: nonnegativeInteger(repo.stargazers_count, 'star count'), forkCount: nonnegativeInteger(repo.forks_count, 'fork count'), primaryLanguage: repo.language ? { name: repo.language } : null };
+  });
+  return { account, originalRepoCount: originals.length, repos, metadataSource: 'github-public-rest' };
+}
+
+async function fetchPublicMetadata() {
+  let metadata = null;
+  const repos = [];
+  for (let page = 1; page <= 40; page += 1) {
+    // Construct every URL from a fixed base; never fetch a page-supplied URL.
+    const response = await githubRequest(PUBLIC_REPOS_URL + (page > 1 ? `&page=${page}` : ''));
+    const parsed = parsePublicMetadata(await response.text(), page);
+    if (metadata && (parsed.account.followers !== metadata.account.followers || parsed.account.public_repos !== metadata.account.public_repos || parsed.originalRepoCount !== metadata.originalRepoCount)) throw new Error('Public account changed during pagination');
+    metadata = parsed;
+    repos.push(...parsed.repos);
+    if (parsed.nextPage === null) {
+      if (repos.length !== parsed.originalRepoCount || new Set(repos.map(repo => repo.name)).size !== repos.length) throw new Error('Source repository total does not match public cards');
+      return { account: parsed.account, originalRepoCount: parsed.originalRepoCount, repos, metadataSource: 'github-public-html' };
+    }
+  }
+  throw new Error('Public source repository pagination exceeds safety limit');
+}
+
+async function fetchMetadata() {
+  if (Date.now() >= restRetryAt) {
+    try { return await fetchRestMetadata(); }
+    catch (error) {
+      restRetryAt = error.retryAt ?? Date.now() + SNAPSHOT_TTL_MS;
+      console.warn('Public GitHub REST metadata unavailable; using public profile HTML: ' + error.message);
+    }
+  }
+  return fetchPublicMetadata();
+}
+
+async function fetchLiveSnapshot() {
+  const [calendar, metadata] = await Promise.all([
+    githubRequest(CALENDAR_URL).then(response => response.text()).then(parseCalendar),
+    fetchMetadata(),
+  ]);
   const snapshot = validateSnapshot({
-    ...calendar, account, fetchedAt: new Date().toISOString(),
-    originalRepoCount: originals.length,
-    repos: originals.map(repo => ({ name: repo.name, url: repo.html_url, stargazerCount: repo.stargazers_count, forkCount: repo.forks_count, primaryLanguage: repo.language ? { name: repo.language } : null })),
+    ...calendar, ...metadata, fetchedAt: new Date().toISOString(),
     freshness: 'live', source: 'github-public',
   });
   return snapshot;
