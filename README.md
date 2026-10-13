@@ -3,13 +3,13 @@
   <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="./assets/readme/hero-mobile.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/readme/hero.svg">
   <source media="(max-width: 600px)" srcset="./assets/readme/hero-mobile.gif">
-  <img src="./assets/readme/hero.gif" width="100%" alt="Pratinav A. â€” UCI Computer Science &amp; Engineering, Class of 2029; robotics, embedded systems, AI safety">
+  <img src="./assets/readme/hero.gif" width="100%" alt="Pratinav A. — UCI Computer Science &amp; Engineering, Class of 2029; robotics, embedded systems, AI safety">
 </picture>
 </a>
 
-<p align="center"><b>UCI CSE â€™29</b> Â· Robotics Â· Embedded systems Â· AI safety</p>
+<p align="center"><b>UCI CSE ’29</b> · Robotics · Embedded systems · AI safety</p>
 
-<p align="center"><a href="https://github.com/ctrl-pt?tab=repositories">Code â†—</a> Â· <a href="https://pratinaa.github.io/">Portfolio â†—</a> Â· <a href="mailto:agrawalptnv@gmail.com">Email â†—</a></p>
+<p align="center"><a href="https://github.com/ctrl-pt?tab=repositories">Code ↗</a> · <a href="https://pratinaa.github.io/">Portfolio ↗</a> · <a href="mailto:agrawalptnv@gmail.com">Email ↗</a></p>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/readme/stack-mobile.svg">
@@ -38,11 +38,11 @@
   <img src="./assets/readme/repositories.svg" width="100%" alt="Original public repositories: astr-19 and drumbit.">
 </picture>
 
-<p align="center"><a href="https://github.com/ctrl-pt/astr-19">astr-19 â†—</a> Â· <a href="https://github.com/ctrl-pt/drumbit">drumbit â†—</a></p>
+<p align="center"><a href="https://github.com/ctrl-pt/astr-19">astr-19 ↗</a> · <a href="https://github.com/ctrl-pt/drumbit">drumbit ↗</a></p>
 
 <a href="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/#snake">
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/snake-static.svg?v=1791869090">
-  <img src="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/snake.svg?v=1791869090" width="100%" alt="Animated contribution snake generated from ctrl-ptâ€™s actual GitHub contribution calendar.">
+  <img src="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/snake.svg?v=1791869090" width="100%" alt="Animated contribution snake generated from ctrl-pt’s actual GitHub contribution calendar.">
 </picture>
 </a>
