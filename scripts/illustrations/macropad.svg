@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-labelledby="macropad-title macropad-desc">
+  <title id="macropad-title">IEEE × Keebs nine-switch macropad</title>
+  <desc id="macropad-desc">Technical illustration based on the portfolio construction photograph: nine exposed clear mechanical switches with red cross stems form a three by three matrix on a black board. A blue Pro Micro controller with two silver solder rows occupies the left side, above an unpopulated OLED header, reset pads, and the anteater silkscreen.</desc>
+  <defs>
+    <linearGradient id="macropad-clear" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#edf1e8"/>
+      <stop offset="0.5" stop-color="#cbd4ce"/>
+      <stop offset="1" stop-color="#8c9a97"/>
+    </linearGradient>
+    <linearGradient id="macropad-red" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#fa5b45"/>
+      <stop offset="0.5" stop-color="#e02d21"/>
+      <stop offset="1" stop-color="#ac1915"/>
+    </linearGradient>
+    <linearGradient id="macropad-steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#edf4f5"/>
+      <stop offset="0.48" stop-color="#a8bac3"/>
+      <stop offset="1" stop-color="#536a74"/>
+    </linearGradient>
+
+    <!-- Exposed MX-style switch: black base, translucent housing, red cross stem. -->
+    <g id="macropad-switch">
+      <path d="M4 10H80L86 17V82L80 88H5L0 81V17Z" fill="#0c1419" stroke="#536168" stroke-width="1.5"/>
+      <path d="M5 71H81V83H5Z" fill="#1c292f"/>
+      <path d="M11 3H73L81 10V70L74 78H10L3 71V11Z" fill="url(#macropad-clear)" stroke="#e5eee8" stroke-width="1.8"/>
+      <!-- Lower internal cavity and the front spring window remain visible. -->
+      <path d="M14 15H70V66H14Z" fill="#77837f" stroke="#bbc7c0" stroke-width="2"/>
+      <path d="M21 21H63V56H21Z" fill="#b4bcb0"/>
+      <path d="M19 59H65L70 72H15Z" fill="#9ca89e"/>
+      <path d="M29 63H55L59 72L54 78H30L26 72Z" fill="#263531"/>
+      <path d="M32 62H53L55 67H30Z" fill="#76877b"/>
+      <!-- Clear shell ribs and edge latches. -->
+      <path d="M9 14V62M75 15V62M18 7H66M12 72H24M60 72H72" fill="none" stroke="#f3f5ea" stroke-width="3" opacity="0.9"/>
+      <path d="M7 25H14V56H7ZM70 25H78V56H70Z" fill="#dce2d6"/>
+      <path d="M6 15H11V24H6ZM73 15H78V24H73ZM7 57H12V66H7ZM72 57H77V66H72Z" fill="#34423f"/>
+      <path d="M17 11H24V19H17ZM61 11H68V19H61Z" fill="#9ca79f" stroke="#f4f6ed"/>
+      <path d="M13 78V82H25M60 82H72V78" fill="none" stroke="#8d9fa4" stroke-width="2.6"/>
+      <!-- Red stem body and raised cruciform keycap mount. -->
+      <path d="M24 23H60L64 27V54L59 59H23L20 54V28Z" fill="#9e1d18"/>
+      <path d="M24 19H60L64 24V51L59 55H23L20 50V25Z" fill="url(#macropad-red)" stroke="#f66f57" stroke-width="1"/>
+      <path d="M34 18H48V27H58V39H48V51H34V39H24V27H34Z" fill="#d5271f"/>
+      <path d="M36 16H47V26H57V36H47V47H36V36H26V26H36Z" fill="#ff624d"/>
+      <path d="M40 19H43V30H53V33H43V43H40V33H30V30H40Z" fill="#d72b23"/>
+      <path d="M37 17H46M27 27H35M48 27H56M37 37V46" fill="none" stroke="#ff9278" stroke-width="1.7"/>
+      <path d="M59 26V49L55 52M23 29V46" fill="none" stroke="#8e1916" stroke-width="2" opacity="0.6"/>
+      <path d="M17 9H32M50 9H65" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    </g>
+
+    <g id="macropad-solder-pad">
+      <ellipse rx="5.3" ry="5.9" fill="#17232b" stroke="#6a838e" stroke-width="1.5"/>
+      <path d="M-3-2L0-4L3-2L4 2L1 4L-3 3Z" fill="url(#macropad-steel)" stroke="#b9c9ca" stroke-width="0.7"/>
+      <path d="M-1-2L1-1V2" fill="none" stroke="#f4f7ec" stroke-width="1.2"/>
+    </g>
+  </defs>
+
+  <!-- A shallow oblique view preserves the photographed four-column board layout. -->
+  <g id="macropad-board" transform="matrix(1 0.055 -0.145 1 89 34)">
+    <!-- Exposed board edge and black switch plate. -->
+    <path d="M13 8H450Q465 8 465 22V295Q465 308 451 308H13Q0 308 0 294V21Q0 8 13 8Z" fill="#101a20" stroke="#536872" stroke-width="1.8"/>
+    <path d="M13 0H451Q465 0 465 14V286Q465 300 451 300H13Q0 300 0 286V14Q0 0 13 0Z" fill="#17232b" stroke="#94a7ae" stroke-width="2"/>
+    <path d="M120 2V298M224 2V298M330 2V298" fill="none" stroke="#394951" stroke-width="1.5"/>
+    <path d="M123 94H460M123 194H460" fill="none" stroke="#2b3b43" stroke-width="3"/>
+    <path d="M16 297H450" fill="none" stroke="#4d616a" stroke-width="2"/>
+    <path d="M119 5H451" fill="none" stroke="#c7d0c8" stroke-width="3"/>
+
+    <!-- Rear of the blue Pro Micro, as oriented in the construction photograph. -->
+    <g id="macropad-pro-micro">
+      <path d="M11 12H108V181H11Z" fill="#0b151d" stroke="#526b76" stroke-width="2"/>
+      <path d="M15 9H105V176H15Z" fill="#245888" stroke="#91b1c0" stroke-width="1.5"/>
+      <path d="M27 15H93V168H27Z" fill="#204c7a" stroke="#5d8fa8" stroke-width="1"/>
+      <!-- USB connector lip at the far edge, partly hidden under the module. -->
+      <path d="M38 0H82V11H38Z" fill="#697e85" stroke="#b3c2c8" stroke-width="1.4"/>
+      <path d="M41 0H79V5H41Z" fill="#dce5e5"/>
+      <path d="M44 4H76V8H44Z" fill="#344951"/>
+      <!-- Visible copper routing on the controller underside. -->
+      <g fill="none" stroke="#6da1b7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 24H41V53H52V69L78 94V118H91"/>
+        <path d="M35 21V46H47V60L72 84V132H91"/>
+        <path d="M91 29H78L59 49V74L84 99V108H91"/>
+        <path d="M91 45H82L68 59V72L91 94"/>
+        <path d="M29 80H41L58 97V126H42L29 140"/>
+        <path d="M29 96H37L49 108V117H36L29 124"/>
+        <path d="M91 145H70L57 158H30"/>
+        <path d="M91 158H79L69 168H42"/>
+        <path d="M29 157L38 148H55L68 135V111L57 101"/>
+      </g>
+      <g fill="#b4c7c4" stroke="#244a65" stroke-width="1">
+        <circle cx="41" cy="53" r="2.4"/><circle cx="59" cy="49" r="2.4"/>
+        <circle cx="52" cy="69" r="2.4"/><circle cx="58" cy="97" r="2.4"/>
+        <circle cx="49" cy="108" r="2.4"/><circle cx="68" cy="135" r="2.4"/>
+        <circle cx="57" cy="158" r="2.4"/><circle cx="70" cy="145" r="2.4"/>
+        <circle cx="42" cy="126" r="2.4"/><circle cx="78" cy="94" r="2.4"/>
+      </g>
+      <path d="M15 21V168M105 21V168" fill="none" stroke="#94afbd" stroke-width="1.5"/>
+      <g id="macropad-left-solder-row" transform="translate(20 23)">
+        <use href="#macropad-solder-pad"/><use href="#macropad-solder-pad" y="13"/>
+        <use href="#macropad-solder-pad" y="26"/><use href="#macropad-solder-pad" y="39"/>
+        <use href="#macropad-solder-pad" y="52"/><use href="#macropad-solder-pad" y="65"/>
+        <use href="#macropad-solder-pad" y="78"/><use href="#macropad-solder-pad" y="91"/>
+        <use href="#macropad-solder-pad" y="104"/><use href="#macropad-solder-pad" y="117"/>
+        <use href="#macropad-solder-pad" y="130"/><use href="#macropad-solder-pad" y="143"/>
+      </g>
+      <g id="macropad-right-solder-row" transform="translate(100 23)">
+        <use href="#macropad-solder-pad"/><use href="#macropad-solder-pad" y="13"/>
+        <use href="#macropad-solder-pad" y="26"/><use href="#macropad-solder-pad" y="39"/>
+        <use href="#macropad-solder-pad" y="52"/><use href="#macropad-solder-pad" y="65"/>
+        <use href="#macropad-solder-pad" y="78"/><use href="#macropad-solder-pad" y="91"/>
+        <use href="#macropad-solder-pad" y="104"/><use href="#macropad-solder-pad" y="117"/>
+        <use href="#macropad-solder-pad" y="130"/><use href="#macropad-solder-pad" y="143"/>
+      </g>
+    </g>
+
+    <!-- Unpopulated OLED header and reset footprint: no display is installed. -->
+    <g id="macropad-unpopulated-footprints" fill="none" stroke="#a8bac3">
+      <g stroke-width="1.8">
+        <circle cx="39" cy="204" r="3.5"/><circle cx="52" cy="204" r="3.5"/>
+        <circle cx="65" cy="204" r="3.5"/><circle cx="78" cy="204" r="3.5"/>
+        <circle cx="103" cy="190" r="5"/><circle cx="103" cy="215" r="5"/>
+      </g>
+      <path d="M29 199V209M34 198H83M96 184H110V221H96" stroke-width="0.8" opacity="0.65"/>
+      <path d="M17 191H24V199H17ZM17 211H24V219H17Z" stroke-width="1.1"/>
+      <path d="M20 202V207" stroke-width="1.2"/>
+    </g>
+    <g fill="#bfcdcf" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="6.5" letter-spacing="0.7">
+      <text x="45" y="196">OLED</text>
+      <text transform="translate(116 214) rotate(-90)">RESET</text>
+      <text transform="translate(14 216) rotate(-90)">R1</text>
+    </g>
+    <!-- Portfolio PCB anteater silkscreen, reduced to its characteristic outline. -->
+    <g id="macropad-anteater-silkscreen" fill="none" stroke="#a8bac3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+      <path d="M34 267L27 277H41L48 268M70 268L66 277H78L85 266"/>
+      <path d="M26 259L46 230L55 228Q51 218 60 219L66 226Q74 218 78 227L80 263Q72 271 52 269L39 264L29 265Z"/>
+      <path d="M80 244Q91 229 96 234Q98 238 90 246Q106 238 105 247Q105 252 94 256Q106 253 104 261Q100 270 81 269"/>
+      <circle cx="59" cy="241" r="2.6"/>
+      <path d="M23 278H87M26 282H85M31 274V284M80 274V284M34 273H77"/>
+    </g>
+    <text x="11" y="293" fill="#d6dfdb" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="6.6" font-weight="700" textLength="103" lengthAdjust="spacingAndGlyphs">IEEE × KEEBS @ UCI</text>
+
+    <!-- The 3 × 3 switch matrix, with its exact photographed placement. -->
+    <g id="macropad-nine-switch-matrix">
+      <use href="#macropad-switch" x="130" y="8"/>
+      <use href="#macropad-switch" x="238" y="8"/>
+      <use href="#macropad-switch" x="346" y="8"/>
+      <use href="#macropad-switch" x="130" y="108"/>
+      <use href="#macropad-switch" x="238" y="108"/>
+      <use href="#macropad-switch" x="346" y="108"/>
+      <use href="#macropad-switch" x="130" y="208"/>
+      <use href="#macropad-switch" x="238" y="208"/>
+      <use href="#macropad-switch" x="346" y="208"/>
+    </g>
+  </g>
+</svg>

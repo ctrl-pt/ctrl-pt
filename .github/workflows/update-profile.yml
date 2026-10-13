@@ -1,0 +1,50 @@
+name: Refresh profile visuals
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 8 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-visual-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PROFILE_USERNAME: ctrl-pt
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read current public activity
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/refresh-data.py
+      - name: Generate profile SVGs
+        run: python scripts/render_profile.py
+      - name: Regenerate the contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ env.PROFILE_USERNAME }}
+          outputs: |
+            assets/readme/snake.gif?color_background=#071f2a&color_snake=#73b5ff&color_dots=#113440,#206058,#2f8b77,#3db796,#4de3ca
+            assets/readme/snake.svg?color_snake=#73b5ff&color_dots=#113440,#206058,#2f8b77,#3db796,#4de3ca
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Create reduced-motion snake
+        run: python scripts/freeze_snake.py
+      - name: Commit refreshed visual assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/github.json assets/readme
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'chore: refresh profile visuals'
+          git push

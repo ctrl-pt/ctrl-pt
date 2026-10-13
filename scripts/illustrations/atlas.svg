@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-labelledby="atlas-title atlas-desc">
+  <title id="atlas-title">Atlas — FRC Team 2854 competition robot</title>
+  <desc id="atlas-desc">Detailed three-quarter illustration based on the portfolio's competition and construction photographs: a low black wedge chassis, three exposed gray intake rollers, blue rubber shooter wheels, aluminum framing, belt and pulley mechanisms, and the blue 2854 competition bumper.</desc>
+  <defs>
+    <linearGradient id="atlas-steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e5eef0"/><stop offset="0.35" stop-color="#a8bac3"/><stop offset="0.62" stop-color="#52666f"/><stop offset="1" stop-color="#c9d7dc"/>
+    </linearGradient>
+    <linearGradient id="atlas-blue" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#4776e3"/><stop offset="0.55" stop-color="#315bcb"/><stop offset="1" stop-color="#2143a2"/>
+    </linearGradient>
+    <linearGradient id="atlas-rubber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a8990"/><stop offset="0.42" stop-color="#d6dedc"/><stop offset="1" stop-color="#859393"/>
+    </linearGradient>
+    <g id="atlas-intake-disc">
+      <ellipse rx="5.9" ry="12.5" fill="url(#atlas-rubber)" stroke="#4a595e" stroke-width="1.3"/>
+      <path d="M1-10.5C-5-8-5 8 1 10.5" fill="none" stroke="#e5eeeb" stroke-width="2.3"/>
+      <path d="M3-9C-1-5-1 5 3 9" fill="none" stroke="#667775" stroke-width="2.4"/>
+    </g>
+    <g id="atlas-shooter-wheel">
+      <path d="M-10-20H8C25-20 25 20 8 20H-10Z" fill="url(#atlas-blue)" stroke="#1b3678" stroke-width="1.5"/>
+      <ellipse cx="9" rx="13" ry="20" fill="#213542" stroke="#0e171d" stroke-width="2"/>
+      <ellipse cx="9" rx="8" ry="14" fill="#0e171d"/>
+      <ellipse cx="9" rx="3.2" ry="5.2" fill="#a8bac3"/>
+      <path d="M-11-16C-18-7-18 7-11 16" fill="none" stroke="#608bf0" stroke-width="2"/>
+    </g>
+    <g id="atlas-bolt">
+      <circle r="2.7" fill="#b7c7cc" stroke="#34474f" stroke-width="0.9"/><path d="M-1.1 0H1.1" stroke="#52666f" stroke-width="0.9"/>
+    </g>
+  </defs>
+
+  <g id="atlas-robot" transform="translate(14 30) scale(1.075 1.21)" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Low drive base; the wheels are mostly concealed by the real bumper. -->
+    <g id="atlas-drive-base">
+      <path d="M31 216 228 187 512 170 509 226 229 266 171 266 42 243Z" fill="#0c141a" stroke="#3b4b52" stroke-width="2"/>
+      <path d="M203 253 238 248 474 214 475 231 237 269 206 269Z" fill="#0a1116"/>
+      <path d="M43 235 196 255 230 246 232 257 198 271 42 250Z" fill="#263740"/>
+      <path d="M200 260 233 259 495 219" fill="none" stroke="#4a5b63" stroke-width="2.8"/>
+      <ellipse cx="277" cy="248" rx="19" ry="13" fill="#101820"/><ellipse cx="461" cy="224" rx="18" ry="12" fill="#101820"/>
+    </g>
+
+    <!-- Far chassis plate, upper aluminum frame, and the exposed shooter bed. -->
+    <g id="atlas-upper-frame">
+      <path d="M115 115 144 65 176 33 213 20 244 55 226 125Z" fill="#142129" stroke="#070e13" stroke-width="3"/>
+      <path d="M141 94 180 53 212 37 224 54 197 110Z" fill="#243640"/>
+      <path d="M152 115 245 49 363 57 311 133 226 166Z" fill="#101a21" stroke="#3f5059" stroke-width="2"/>
+      <path d="M202 115 271 65 334 74 294 127 236 144Z" fill="#293b46"/>
+      <path d="M215 102 269 66 316 70 260 117Z" fill="#070e15"/>
+      <path d="M190 100 248 52 361 63" fill="none" stroke="#111b22" stroke-width="13"/>
+      <path d="M190 97 247 48 359 59" fill="none" stroke="url(#atlas-steel)" stroke-width="8"/>
+      <path d="M194 97 249 52 354 62" fill="none" stroke="#e5eef0" stroke-width="1.8"/>
+      <path d="M206 113 269 60 337 67" fill="none" stroke="#897d9e" stroke-width="8"/>
+      <path d="M207 110 269 58 337 65" fill="none" stroke="#d8a4de" stroke-width="3"/>
+      <path d="M242 56 251 49 289 53 283 60Z" fill="#efc4eb"/>
+      <path d="M173 130 238 79" fill="none" stroke="#b9c8cd" stroke-width="5"/>
+      <path d="M174 132 238 82" fill="none" stroke="#4e626c" stroke-width="2"/>
+      <path d="M265 109 300 90 329 100 299 129" fill="none" stroke="#0a1015" stroke-width="8"/>
+      <path d="M246 126C264 100 296 140 316 110M233 140C282 125 290 159 339 118" fill="none" stroke="#ba5d63" stroke-width="2"/>
+      <path d="M225 132C261 152 271 109 300 115" fill="none" stroke="#c5cbd0" stroke-width="1.7"/>
+      <path d="M291 126C313 138 310 151 332 148" fill="none" stroke="#c69c54" stroke-width="2"/>
+      <rect x="252" y="126" width="27" height="18" rx="2" fill="#19252e" stroke="#77929c" stroke-width="1.4" transform="rotate(-19 252 126)"/>
+      <path d="M254 126 273 119M259 130 276 124" stroke="#85989c" stroke-width="1"/>
+      <use href="#atlas-bolt" x="249" y="49"/><use href="#atlas-bolt" x="337" y="58"/><use href="#atlas-bolt" x="196" y="96"/>
+    </g>
+
+    <!-- Four blue compliant shooter wheels and their cross shafts. -->
+    <g id="atlas-shooter">
+      <path d="M56 99 70 69 189 82 209 130 166 144 48 125Z" fill="#111c23" stroke="#091218" stroke-width="2.5"/>
+      <path d="M82 89 182 100M117 116 219 124" fill="none" stroke="#0a1118" stroke-width="9"/>
+      <path d="M79 87 185 98M118 114 216 122" fill="none" stroke="url(#atlas-steel)" stroke-width="3"/>
+      <use href="#atlas-shooter-wheel" transform="translate(86 90) rotate(6)"/>
+      <use href="#atlas-shooter-wheel" transform="translate(168 98) rotate(6)"/>
+      <use href="#atlas-shooter-wheel" transform="translate(126 117) rotate(6) scale(.88)"/>
+      <use href="#atlas-shooter-wheel" transform="translate(204 124) rotate(6) scale(.88)"/>
+      <path d="M59 113 186 127" fill="none" stroke="#0a1116" stroke-width="11"/>
+      <path d="M59 110 186 124" fill="none" stroke="#52666f" stroke-width="2.5"/>
+      <path d="M191 89 218 66 227 47 241 55 233 78 207 101Z" fill="url(#atlas-steel)" stroke="#34454c" stroke-width="1.5"/>
+      <ellipse cx="224" cy="52" rx="23" ry="20" transform="rotate(-35 224 52)" fill="#111a21" stroke="#6b7f87" stroke-width="3"/>
+      <ellipse cx="224" cy="52" rx="16" ry="13" transform="rotate(-35 224 52)" fill="#273b45" stroke="#080e13" stroke-width="3"/>
+      <circle cx="224" cy="52" r="5" fill="#9eafb7"/>
+      <path d="M213 36 210 40M223 32 222 37M233 34 231 38M241 41 237 43M242 51 237 51M237 60 233 57M227 66 225 62M217 65 219 60M207 58 212 56M205 48 210 49" stroke="#7b8a90" stroke-width="2"/>
+    </g>
+
+    <!-- Angular black side panel follows the competition photograph. -->
+    <g id="atlas-side-panel">
+      <path d="M183 149 319 100 360 49 382 38 401 25 488 100 487 172 222 215Z" fill="#17232b" stroke="#080f15" stroke-width="3"/>
+      <path d="M319 100 361 49 401 25 418 40 376 105 286 153Z" fill="#283841"/>
+      <path d="M402 28 485 102 486 113 418 70 376 105Z" fill="#21313a"/>
+      <path d="M227 155 313 126 299 174 225 197Z" fill="#0d171e"/>
+      <path d="M322 120 365 111 352 174 304 190Z" fill="#101a21"/>
+      <path d="M410 123 473 115 474 164 401 177Z" fill="#0e1921"/>
+      <path d="M223 175 274 145" stroke="#a8bac3" stroke-width="5"/>
+      <path d="M227 179 277 149" stroke="#536873" stroke-width="2"/>
+      <path d="M215 194 290 174 290 196 227 212Z" fill="#1e303a"/>
+      <path d="M254 180 265 177 264 190 253 193Z" fill="#bca440"/>
+      <path d="M351 173 379 169 379 187 349 191Z" fill="#0b141a" stroke="#71858e" stroke-width="1.5"/>
+      <path d="M349 173 349 189M355 173 355 188M374 170 374 185" stroke="#d0dadf" stroke-width="1"/>
+      <path d="M401 26 406 33 401 41 396 35Z" fill="#b5c4c9"/>
+      <path d="M405 62 408 83 403 117" fill="none" stroke="#a4b6bd" stroke-width="3"/>
+      <circle cx="406" cy="89" r="12" fill="#0b131a" stroke="#566a75" stroke-width="2"/>
+      <circle cx="406" cy="89" r="5" fill="#a8bac3"/>
+      <circle cx="406" cy="89" r="2" fill="#344650"/>
+      <path d="M404 70 409 69 413 77 408 81" fill="#1d2c35" stroke="#83989f" stroke-width="1.4"/>
+      <path d="M355 97 368 93M354 103 371 99M307 150 324 144M307 156 330 148M293 161 301 158M300 176 313 172" stroke="#b9c7cc" stroke-width="2.5"/>
+      <g fill="#dce6e9" font-family="Arial, Helvetica, sans-serif" font-weight="700" transform="skewY(-8)">
+        <text x="422" y="185" font-size="10">In Memory of</text>
+        <text x="426" y="198" font-size="10">Daniel Bray</text>
+      </g>
+      <use href="#atlas-bolt" x="319" y="103"/><use href="#atlas-bolt" x="376" y="54"/><use href="#atlas-bolt" x="478" y="110"/>
+      <use href="#atlas-bolt" x="227" y="172"/><use href="#atlas-bolt" x="333" y="190"/><use href="#atlas-bolt" x="477" y="164"/>
+    </g>
+
+    <!-- Sewn blue fabric bumper with the real team number. -->
+    <g id="atlas-blue-bumper">
+      <path d="M211 205Q212 193 226 187L486 152Q505 150 526 155L526 199 238 244Q217 247 207 235Z" fill="url(#atlas-blue)" stroke="#203e8c" stroke-width="2"/>
+      <path d="M217 197 487 154 524 156 239 203Z" fill="#4c73d3"/>
+      <path d="M217 199Q239 199 243 212L239 242Q218 245 209 234L212 209Z" fill="#315bcb"/>
+      <path d="M244 212 524 167" fill="none" stroke="#6184de" stroke-width="1.2" opacity="0.75"/>
+      <path d="M239 242 525 198 525 192 244 234Z" fill="#2246a5"/>
+      <path d="M239 203 246 212 240 239M484 158 487 168 486 198" fill="none" stroke="#294da9" stroke-width="1.4"/>
+      <text x="351" y="274" transform="skewY(-8.8)" fill="#eef5f7" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="900" letter-spacing="-2">2854</text>
+    </g>
+
+    <!-- Three full-width gray intake rollers, shown ahead of the bumper. -->
+    <g id="atlas-intake-rollers">
+      <path d="M36 119 181 136 192 250 167 262 14 226 3 181Z" fill="#0a131a" stroke="#172630" stroke-width="2"/>
+      <path d="M29 140 178 158 173 226 28 207Z" fill="#1c3141"/>
+      <path d="M34 155 174 171 169 191 27 174Z" fill="#294e8f"/>
+      <path d="M52 225 179 242 171 252 49 237Z" fill="#344f71"/>
+      <g transform="translate(45 150) rotate(7)">
+        <path d="M-13 0H143" stroke="#a8bac3" stroke-width="5"/>
+        <use href="#atlas-intake-disc" x="0"/><use href="#atlas-intake-disc" x="9"/><use href="#atlas-intake-disc" x="18"/><use href="#atlas-intake-disc" x="27"/>
+        <use href="#atlas-intake-disc" x="36"/><use href="#atlas-intake-disc" x="45"/><use href="#atlas-intake-disc" x="54"/><use href="#atlas-intake-disc" x="63"/>
+        <use href="#atlas-intake-disc" x="72"/><use href="#atlas-intake-disc" x="81"/><use href="#atlas-intake-disc" x="90"/><use href="#atlas-intake-disc" x="99"/>
+        <use href="#atlas-intake-disc" x="108"/><use href="#atlas-intake-disc" x="117"/><use href="#atlas-intake-disc" x="126"/>
+        <ellipse cx="137" rx="5" ry="8" fill="#b3c2c9"/>
+      </g>
+      <g transform="translate(24 193) rotate(8)">
+        <path d="M-7 0H157" stroke="#a8bac3" stroke-width="5"/>
+        <use href="#atlas-intake-disc" x="0"/><use href="#atlas-intake-disc" x="9"/><use href="#atlas-intake-disc" x="18"/><use href="#atlas-intake-disc" x="27"/>
+        <use href="#atlas-intake-disc" x="36"/><use href="#atlas-intake-disc" x="45"/><use href="#atlas-intake-disc" x="54"/><use href="#atlas-intake-disc" x="63"/>
+        <use href="#atlas-intake-disc" x="72"/><use href="#atlas-intake-disc" x="81"/><use href="#atlas-intake-disc" x="90"/><use href="#atlas-intake-disc" x="99"/>
+        <use href="#atlas-intake-disc" x="108"/><use href="#atlas-intake-disc" x="117"/><use href="#atlas-intake-disc" x="126"/><use href="#atlas-intake-disc" x="135"/><use href="#atlas-intake-disc" x="144"/>
+      </g>
+      <g transform="translate(50 236) rotate(8)">
+        <path d="M-8 0H143" stroke="#a8bac3" stroke-width="5"/>
+        <use href="#atlas-intake-disc" x="0"/><use href="#atlas-intake-disc" x="9"/><use href="#atlas-intake-disc" x="18"/><use href="#atlas-intake-disc" x="27"/>
+        <use href="#atlas-intake-disc" x="36"/><use href="#atlas-intake-disc" x="45"/><use href="#atlas-intake-disc" x="54"/><use href="#atlas-intake-disc" x="63"/>
+        <use href="#atlas-intake-disc" x="72"/><use href="#atlas-intake-disc" x="81"/><use href="#atlas-intake-disc" x="90"/><use href="#atlas-intake-disc" x="99"/>
+        <use href="#atlas-intake-disc" x="108"/><use href="#atlas-intake-disc" x="117"/><use href="#atlas-intake-disc" x="126"/>
+      </g>
+      <path d="M49 81 38 109 5 180 17 215 44 227" fill="none" stroke="#0b1218" stroke-width="13"/>
+      <path d="M49 79 40 110 8 180 19 212" fill="none" stroke="#455761" stroke-width="2.4"/>
+      <path d="M18 132 188 152M8 173 173 194M19 214 178 238" fill="none" stroke="#0a1218" stroke-width="10"/>
+      <path d="M21 129 183 149M10 170 173 191M23 211 175 235" fill="none" stroke="#73858d" stroke-width="2.3"/>
+      <path d="M179 143 206 149 204 194 190 265 172 266 168 228 160 191Z" fill="#182831" stroke="#060e14" stroke-width="3"/>
+      <path d="M183 159 180 191 190 215 181 251" fill="none" stroke="#43565f" stroke-width="2"/>
+      <path d="M194 144C169 160 173 180 190 185L204 221 186 260" fill="none" stroke="#080e13" stroke-width="9"/>
+      <path d="M194 144C169 160 173 180 190 185L204 221 186 260" fill="none" stroke="#4d5e65" stroke-width="1.8"/>
+      <circle cx="190" cy="172" r="15" fill="#0b141b" stroke="#42565f" stroke-width="2.5"/>
+      <circle cx="190" cy="172" r="7" fill="#a8bac3"/><circle cx="190" cy="172" r="3.5" fill="#344851"/>
+      <circle cx="184" cy="253" r="10" fill="#0d161d" stroke="#42565f" stroke-width="2"/>
+      <circle cx="184" cy="253" r="4" fill="#a8bac3"/>
+      <path d="M65 133 64 126 80 127 83 136Z" fill="#6baf52" stroke="#304c35" stroke-width="1"/>
+      <circle cx="70" cy="131" r="2.8" fill="#c9e5b0"/><circle cx="78" cy="132" r="2.8" fill="#c9e5b0"/>
+      <use href="#atlas-bolt" x="48" y="88"/><use href="#atlas-bolt" x="33" y="125"/><use href="#atlas-bolt" x="19" y="157"/>
+      <use href="#atlas-bolt" x="172" y="157"/><use href="#atlas-bolt" x="168" y="190"/><use href="#atlas-bolt" x="180" y="218"/>
+      <use href="#atlas-bolt" x="196" y="208"/><use href="#atlas-bolt" x="174" y="240"/><use href="#atlas-bolt" x="195" y="241"/>
+    </g>
+  </g>
+</svg>

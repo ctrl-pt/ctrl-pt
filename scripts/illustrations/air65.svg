@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-labelledby="air65-title air65-desc">
+  <title id="air65-title">Air65 brushless Tinywhoop</title>
+  <desc id="air65-desc">Elevated three-quarter illustration of the portfolio's assembled Air65: four pale blue circular propeller ducts with open lower walls and landing feet, clear three-blade propellers, exposed brushless motors and flight controller, translucent white camera canopy, large black FPV lens, and a rearward-leaning black antenna.</desc>
+  <defs>
+    <linearGradient id="air65-blue" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#c8f0fa"/>
+      <stop offset="0.54" stop-color="#a2dceb"/>
+      <stop offset="1" stop-color="#77b9cb"/>
+    </linearGradient>
+    <linearGradient id="air65-canopy" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="0.55" stop-color="#e5eef0" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#a8bac3" stop-opacity="0.8"/>
+    </linearGradient>
+    <radialGradient id="air65-lens">
+      <stop offset="0" stop-color="#233b37"/>
+      <stop offset="0.55" stop-color="#17232b"/>
+      <stop offset="1" stop-color="#060b10"/>
+    </radialGradient>
+
+    <!-- A duct is an open ring: there is no filled disk behind its propeller. -->
+    <g id="air65-duct">
+      <!-- Rear wall and structural spokes under the motor. -->
+      <path d="M-104 0C-104-35-58-62 0-62S104-35 104 0L100 18C97-16 55-45 0-45S-97-16-100 18Z" fill="url(#air65-blue)" stroke="#76afbf" stroke-width="1.1"/>
+      <path d="M-1 25-68-34M0 27 75-31M0 27 0 68" fill="none" stroke="#8bcbdc" stroke-width="9" stroke-linecap="round"/>
+      <path d="M-1 25-68-34M0 27 75-31" fill="none" stroke="#c8edf4" stroke-width="2.5"/>
+      <!-- Brushless motor bell, exposed copper windings and teal cap. -->
+      <path d="M-21 10-19 33Q0 45 19 33L21 10Z" fill="#714a40" stroke="#293a42" stroke-width="1.5"/>
+      <path d="M-16 16-14 32M-10 20-9 35M-4 21-4 37M3 21 3 37M9 20 9 35M15 17 14 32" fill="none" stroke="#cf8d71" stroke-width="2.3"/>
+      <path d="M-19 29Q0 41 19 29" fill="none" stroke="#b57561" stroke-width="2"/>
+      <ellipse cy="11" rx="21" ry="12" fill="#439dab" stroke="#bcdee2" stroke-width="2"/>
+      <ellipse cy="11" rx="16.5" ry="9" fill="#17232b"/>
+      <path d="M-14 7-7 10-10 16M-1 3 0 10 6 5M12 9 6 13 12 16M0 13-2 20" fill="none" stroke="#a8bac3" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cy="10" rx="7" ry="5" fill="#b1cad0"/>
+      <!-- Exactly three translucent propeller blades in the rotor plane. -->
+      <g transform="translate(0 -5) scale(1 .60) rotate(-19)" fill="#e5eef0" fill-opacity="0.64" stroke="#eff9fa" stroke-width="1.7" stroke-linejoin="round">
+        <path d="M6-8C30-20 63-22 93-13L92 8C67 19 30 15 7 8Z"/>
+        <path d="M6-8C30-20 63-22 93-13L92 8C67 19 30 15 7 8Z" transform="rotate(120)"/>
+        <path d="M6-8C30-20 63-22 93-13L92 8C67 19 30 15 7 8Z" transform="rotate(240)"/>
+        <path d="M18-9Q55-12 84-5M18-9Q55-12 84-5M18-9Q55-12 84-5" fill="none" stroke="#ffffff" stroke-opacity="0.5"/>
+        <circle r="13" fill="#edf5f5" fill-opacity="0.87"/>
+      </g>
+      <ellipse cy="-7" rx="5" ry="3" fill="#ffffff"/>
+      <path d="M0-8V-15" stroke="#8a9ca2" stroke-width="2.4" stroke-linecap="round"/>
+      <!-- Open lower skirt and two molded landing loops. -->
+      <path d="M-65 53-60 75Q-54 96-35 87L-15 68-26 64-43 78Q-49 80-51 73L-56 52ZM50 53 56 78Q63 93 72 81L83 53 73 49 64 72 59 51Z" fill="url(#air65-blue)" stroke="#8ac1ce" stroke-width="1.3"/>
+      <path d="M-104 0C-104 35-58 62 0 62S104 35 104 0L102 15C99 48 57 77 0 77S-99 48-102 15Z" fill="url(#air65-blue)" stroke="#76afbf" stroke-width="1.2"/>
+      <path d="M-103 0C-103 34-57 62 0 62S103 34 103 0" fill="none" stroke="#c5edf5" stroke-width="3"/>
+      <path d="M-103 0C-103-34-57-62 0-62S103-34 103 0" fill="none" stroke="#d1f2fa" stroke-width="3.5"/>
+    </g>
+    <g id="air65-screw">
+      <ellipse rx="10" ry="6.5" fill="#33444b"/>
+      <ellipse cy="-3" rx="9" ry="6" fill="#a8bac3" stroke="#edf4f3" stroke-width="1.5"/>
+      <ellipse cy="-3" rx="5.7" ry="3.8" fill="#d9e3e1" stroke="#6b7c7d" stroke-width="1.3"/>
+      <path d="M-3-3H3M0-5V-1" stroke="#39494d" stroke-width="1.6"/>
+    </g>
+  </defs>
+
+  <!-- Rear duct, with its propeller partly hidden by the FPV camera. -->
+  <g id="air65-rear-rotor" transform="translate(334 106) rotate(5) scale(.91)">
+    <use href="#air65-duct"/>
+  </g>
+
+  <!-- One-piece injection-molded blue frame bridges all four ducts. -->
+  <g id="air65-central-frame" fill="#9ddbe9" stroke="#79b6c5" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M195 174 254 138 294 130 360 163 421 175 414 196 357 185 304 157 268 161 222 195Z"/>
+    <path d="M204 221 251 246 328 251 382 212 423 218 421 241 387 235 333 278 249 271 203 242Z"/>
+    <path d="M204 221 251 246 328 251 382 212" fill="none" stroke="#d4f3fa" stroke-width="3"/>
+  </g>
+
+  <g id="air65-left-rotor" transform="translate(139 183) rotate(-11)">
+    <use href="#air65-duct"/>
+  </g>
+  <g id="air65-right-rotor" transform="translate(458 215) rotate(-8)">
+    <use href="#air65-duct"/>
+  </g>
+
+  <!-- Motor leads terminate at the exposed all-in-one flight controller. -->
+  <g id="air65-wiring" fill="none" stroke-linecap="round">
+    <path d="M161 201Q188 214 224 206M164 204Q186 222 226 211M166 208Q188 228 227 216M435 238Q411 251 377 232M436 242Q411 256 375 238M437 246Q411 261 374 244M322 132Q315 148 324 165" stroke="#17232b" stroke-width="3.2"/>
+    <path d="M285 237Q262 270 267 300M290 239Q269 271 272 300M294 242Q277 277 277 300" stroke="#283841" stroke-width="2.6"/>
+  </g>
+
+  <!-- Diamond-oriented black PCB, real component clusters and mounting posts. -->
+  <g id="air65-flight-controller" stroke-linejoin="round">
+    <path d="M273 160 376 188 386 254 328 285 220 247 219 196Z" fill="#17232b" stroke="#82969b" stroke-width="2"/>
+    <path d="M221 247 328 285 386 254V263L329 294 222 254Z" fill="#0c171d" stroke="#52676f" stroke-width="1.2"/>
+    <path d="M236 204 272 183 317 196 302 230 262 244 230 232Z" fill="#202e33" stroke="#4a5b5c" stroke-width="1"/>
+    <path d="M251 203 277 190 301 198 280 225 252 216Z" fill="#0c171d" stroke="#52616a" stroke-width="1.4"/>
+    <path d="M315 224 341 219 360 235 335 249 309 239Z" fill="#0b151b" stroke="#677c83" stroke-width="1.2"/>
+    <path d="M243 201 239 206M248 197 244 202M253 194 249 199M258 191 254 196M268 222 266 227M275 224 273 229M282 223 281 229M289 219 290 225M297 214 300 218M304 204 309 206" stroke="#d8ded8" stroke-width="2"/>
+    <path d="M318 246 316 251M324 249 322 254M331 251 330 256M349 243 354 246M354 239 359 242M359 235 364 237" stroke="#d8ded8" stroke-width="1.6"/>
+    <g fill="#c0a47d" stroke="#e3e1c8" stroke-width=".9">
+      <path d="m229 212 9-3 5 5-10 4zM235 226l10-4 4 5-9 4zM247 238l11-4 5 5-11 4zM258 247l11-4 4 5-10 4zM285 255l11-4 4 5-10 4zM298 260l11-4 4 5-10 4zM360 211l9 3-2 7-9-3zM363 224l9 3-2 7-9-3zM319 174l9 3-2 7-9-3zM331 179l9 3-2 7-9-3z"/>
+    </g>
+    <g fill="#e5eef0">
+      <ellipse cx="229" cy="221" rx="3" ry="2"/><ellipse cx="234" cy="234" rx="3" ry="2"/>
+      <ellipse cx="246" cy="242" rx="3" ry="2"/><ellipse cx="374" cy="237" rx="3" ry="2"/>
+      <ellipse cx="372" cy="246" rx="3" ry="2"/><ellipse cx="362" cy="259" rx="3" ry="2"/>
+    </g>
+    <path d="M244 239 264 234 274 240 271 248 251 253 243 247Z" fill="#a99857" stroke="#e9db9f" stroke-width="1.1"/>
+    <path d="M245 241 265 237M252 248 270 243" fill="none" stroke="#f0e7b9" stroke-width="1.2"/>
+    <path d="M313 262 329 259 339 265 337 274 320 278 313 272Z" fill="#e8ede1" stroke="#9ba998" stroke-width="1.2"/>
+    <path d="M319 264 331 262 335 266 323 269Z" fill="#635b47"/>
+    <path d="M289 172Q259 181 260 190M300 251Q318 268 324 269" fill="none" stroke="#d2c450" stroke-width="3"/>
+    <path d="M296 169Q289 196 288 219T307 263" fill="none" stroke="#d76555" stroke-width="3.5"/>
+    <path d="M302 169Q295 195 295 220T313 262" fill="none" stroke="#070f15" stroke-width="3.2"/>
+    <g fill="#26363e" stroke="#6e8289" stroke-width="1.5">
+      <path d="M235 235v12q11 11 23 0v-12Z"/><path d="M353 261v12q12 10 23-1v-12Z"/>
+      <path d="M358 172v12q11 9 20 0v-12Z"/>
+    </g>
+    <use href="#air65-screw" transform="translate(247 236)"/>
+    <use href="#air65-screw" transform="translate(365 261)"/>
+    <use href="#air65-screw" transform="translate(368 174)"/>
+  </g>
+
+  <!-- Nearest ring overlaps the controller edge, as in the portfolio photograph. -->
+  <g id="air65-front-rotor" transform="translate(267 282) rotate(-11) scale(1.1)">
+    <use href="#air65-duct"/>
+  </g>
+
+  <!-- Black antenna tilts backward above the open translucent camera canopy. -->
+  <g id="air65-antenna" stroke-linecap="round">
+    <path d="M284 124 276 93 230 29" fill="none" stroke="#101a21" stroke-width="13"/>
+    <path d="M279 108 271 91 228 31" fill="none" stroke="#46555e" stroke-width="3.2"/>
+    <path d="M275 100 286 121 299 132 269 132Z" fill="#17232b"/>
+  </g>
+
+  <!-- Molded canopy is represented by open legs and ribs, not a solid fuselage. -->
+  <g id="air65-camera-canopy" stroke-linejoin="round">
+    <path d="M278 112Q305 94 328 113L349 165 362 226 339 234 320 178 296 174 276 211 248 240 231 237 260 206 265 161Z" fill="url(#air65-canopy)" stroke="#c8d7da" stroke-width="2"/>
+    <path d="M281 116Q305 104 323 117L330 132 295 137Z" fill="#f4faf9" fill-opacity=".7" stroke="#ffffff" stroke-width="2"/>
+    <path d="M276 134 280 168 271 195 268 156Z" fill="#80969e" fill-opacity=".4"/>
+    <path d="M277 132 270 141 278 170 290 167Z" fill="#1a282d" stroke="#d3dcd8" stroke-width="1.5"/>
+    <path d="M281 139 282 156" stroke="#c3b16d" stroke-width="4"/>
+    <path d="M310 182 317 205 326 221 311 229 299 209 290 202 279 222 257 236 244 234 270 212 280 188Z" fill="url(#air65-canopy)" stroke="#d7e3e4" stroke-width="2"/>
+    <path d="M334 177 345 195 351 217 335 222 326 194Z" fill="#edf5f4" fill-opacity=".58" stroke="#d3e2e3" stroke-width="2"/>
+    <path d="M298 181 317 184 323 199 315 204 301 199Z" fill="#111d23" stroke="#dbe6e6" stroke-width="3"/>
+    <path d="M304 195 315 198M315 190 320 193" stroke="#c5b075" stroke-width="2.5"/>
+    <path d="M282 119 277 155M326 114 342 160M277 215 255 233M340 200 349 219" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <use href="#air65-screw" transform="translate(241 236) scale(.8)"/>
+    <use href="#air65-screw" transform="translate(354 227) scale(.8)"/>
+  </g>
+
+  <!-- Oversize dark FPV optic is the main visual landmark of this build. -->
+  <g id="air65-fpv-lens" transform="translate(308 154) rotate(-9)">
+    <ellipse cx="1" cy="1" rx="39" ry="43" fill="#eff5f3" stroke="#b6c9ce" stroke-width="2.4"/>
+    <ellipse cx="3" cy="-1" rx="33.5" ry="37.5" fill="#0b131a" stroke="#5e6c73" stroke-width="2.3"/>
+    <ellipse cx="4" cy="-1" rx="29" ry="33" fill="#10191d" stroke="#03080d" stroke-width="2.6"/>
+    <ellipse cx="5" cy="0" rx="25" ry="29" fill="url(#air65-lens)" stroke="#283841" stroke-width="1.6"/>
+    <path d="M-15-20Q-6-29 6-26L3-18Q-6-20-11-12Z" fill="#536d44" fill-opacity=".5"/>
+    <ellipse cx="6" cy="4" rx="13" ry="15" fill="#0d171e" stroke="#596967" stroke-width="2"/>
+    <ellipse cx="6" cy="4" rx="9" ry="10.5" fill="#203633" stroke="#293f3f" stroke-width="1.8"/>
+    <ellipse cx="6" cy="4" rx="5" ry="6" fill="#101d22"/>
+    <path d="M1 1 5-2 8 1 4 4Z" fill="#86a987" fill-opacity=".85"/>
+    <circle cx="8" cy="6" r="1.6" fill="#c4775f"/>
+    <path d="M-19 9-17 15" stroke="#8ca6ad" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+    <path d="M-22-29Q-7-41 10-37" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
