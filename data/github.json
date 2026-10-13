@@ -1,8 +1,8 @@
 {
   "snapshot": "2026-10-13",
-  "fetchedAt": "2026-10-13T05:24:50.641605+00:00",
+  "fetchedAt": "2026-10-13T05:45:49.824457+00:00",
   "source": "github-public-calendar-and-api",
-  "totalContributions": 580,
+  "totalContributions": 582,
   "originalRepoCount": 3,
   "account": {
     "login": "ctrl-pt",
@@ -43,7 +43,7 @@
       },
       {
         "date": "2025-10-17",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 5
       },
@@ -63,31 +63,31 @@
       },
       {
         "date": "2025-10-20",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
       {
         "date": "2025-10-21",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 2
       },
       {
         "date": "2025-10-22",
-        "contributionLevel": 4,
+        "contributionLevel": 3,
         "contributionCount": 6,
         "weekday": 3
       },
       {
         "date": "2025-10-23",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 4
       },
       {
         "date": "2025-10-24",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -101,7 +101,7 @@
     [
       {
         "date": "2025-10-26",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 0
       },
@@ -113,25 +113,25 @@
       },
       {
         "date": "2025-10-28",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 2
       },
       {
         "date": "2025-10-29",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
       {
         "date": "2025-10-30",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
       {
         "date": "2025-10-31",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -151,7 +151,7 @@
       },
       {
         "date": "2025-11-03",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
@@ -169,7 +169,7 @@
       },
       {
         "date": "2025-11-06",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 4
       },
@@ -213,7 +213,7 @@
       },
       {
         "date": "2025-11-13",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 4
       },
@@ -251,7 +251,7 @@
       },
       {
         "date": "2025-11-19",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
@@ -283,7 +283,7 @@
       },
       {
         "date": "2025-11-24",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 1
       },
@@ -327,13 +327,13 @@
       },
       {
         "date": "2025-12-01",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
       {
         "date": "2025-12-02",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -483,7 +483,7 @@
       },
       {
         "date": "2025-12-26",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -503,13 +503,13 @@
       },
       {
         "date": "2025-12-29",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
       {
         "date": "2025-12-30",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -559,7 +559,7 @@
       },
       {
         "date": "2026-01-07",
-        "contributionLevel": 4,
+        "contributionLevel": 3,
         "contributionCount": 6,
         "weekday": 3
       },
@@ -591,7 +591,7 @@
       },
       {
         "date": "2026-01-12",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
@@ -609,7 +609,7 @@
       },
       {
         "date": "2026-01-15",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -629,7 +629,7 @@
     [
       {
         "date": "2026-01-18",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 0
       },
@@ -691,13 +691,13 @@
       },
       {
         "date": "2026-01-28",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 3
       },
       {
         "date": "2026-01-29",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 4
       },
@@ -717,19 +717,19 @@
     [
       {
         "date": "2026-02-01",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 0
       },
       {
         "date": "2026-02-02",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
       {
         "date": "2026-02-03",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -741,7 +741,7 @@
       },
       {
         "date": "2026-02-05",
-        "contributionLevel": 4,
+        "contributionLevel": 3,
         "contributionCount": 6,
         "weekday": 4
       },
@@ -753,7 +753,7 @@
       },
       {
         "date": "2026-02-07",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 6
       }
@@ -779,19 +779,19 @@
       },
       {
         "date": "2026-02-11",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 3
       },
       {
         "date": "2026-02-12",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
       {
         "date": "2026-02-13",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -829,13 +829,13 @@
       },
       {
         "date": "2026-02-19",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
       {
         "date": "2026-02-20",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -861,19 +861,19 @@
       },
       {
         "date": "2026-02-24",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
       {
         "date": "2026-02-25",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
       {
         "date": "2026-02-26",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 4
       },
@@ -911,7 +911,7 @@
       },
       {
         "date": "2026-03-04",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
@@ -961,7 +961,7 @@
       },
       {
         "date": "2026-03-12",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 4
       },
@@ -1011,13 +1011,13 @@
       },
       {
         "date": "2026-03-20",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
       {
         "date": "2026-03-21",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 6
       }
@@ -1043,7 +1043,7 @@
       },
       {
         "date": "2026-03-25",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
@@ -1055,7 +1055,7 @@
       },
       {
         "date": "2026-03-27",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -1081,7 +1081,7 @@
       },
       {
         "date": "2026-03-31",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -1093,7 +1093,7 @@
       },
       {
         "date": "2026-04-02",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -1113,7 +1113,7 @@
     [
       {
         "date": "2026-04-05",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 0
       },
@@ -1163,13 +1163,13 @@
       },
       {
         "date": "2026-04-13",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
       {
         "date": "2026-04-14",
-        "contributionLevel": 4,
+        "contributionLevel": 3,
         "contributionCount": 6,
         "weekday": 2
       },
@@ -1181,13 +1181,13 @@
       },
       {
         "date": "2026-04-16",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
       {
         "date": "2026-04-17",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 5
       },
@@ -1207,7 +1207,7 @@
       },
       {
         "date": "2026-04-20",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
@@ -1225,7 +1225,7 @@
       },
       {
         "date": "2026-04-23",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -1237,7 +1237,7 @@
       },
       {
         "date": "2026-04-25",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 6
       }
@@ -1257,7 +1257,7 @@
       },
       {
         "date": "2026-04-28",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -1269,13 +1269,13 @@
       },
       {
         "date": "2026-04-30",
-        "contributionLevel": 4,
+        "contributionLevel": 3,
         "contributionCount": 6,
         "weekday": 4
       },
       {
         "date": "2026-05-01",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -1369,7 +1369,7 @@
       },
       {
         "date": "2026-05-16",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 6
       }
@@ -1433,7 +1433,7 @@
       },
       {
         "date": "2026-05-26",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -1483,13 +1483,13 @@
       },
       {
         "date": "2026-06-03",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
       {
         "date": "2026-06-04",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -1515,7 +1515,7 @@
       },
       {
         "date": "2026-06-08",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
@@ -1533,7 +1533,7 @@
       },
       {
         "date": "2026-06-11",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -1559,7 +1559,7 @@
       },
       {
         "date": "2026-06-15",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
@@ -1583,7 +1583,7 @@
       },
       {
         "date": "2026-06-19",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -1627,7 +1627,7 @@
       },
       {
         "date": "2026-06-26",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 5
       },
@@ -1653,7 +1653,7 @@
       },
       {
         "date": "2026-06-30",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -1703,7 +1703,7 @@
       },
       {
         "date": "2026-07-08",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
@@ -1741,19 +1741,19 @@
       },
       {
         "date": "2026-07-14",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 2
       },
       {
         "date": "2026-07-15",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
       {
         "date": "2026-07-16",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -1835,7 +1835,7 @@
       },
       {
         "date": "2026-07-29",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 3
       },
@@ -1847,7 +1847,7 @@
       },
       {
         "date": "2026-07-31",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -1873,7 +1873,7 @@
       },
       {
         "date": "2026-08-04",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -1885,7 +1885,7 @@
       },
       {
         "date": "2026-08-06",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -1911,7 +1911,7 @@
       },
       {
         "date": "2026-08-10",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
@@ -1973,7 +1973,7 @@
       },
       {
         "date": "2026-08-20",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
@@ -1993,7 +1993,7 @@
     [
       {
         "date": "2026-08-23",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 0
       },
@@ -2049,13 +2049,13 @@
       },
       {
         "date": "2026-09-01",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 2
       },
       {
         "date": "2026-09-02",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 3
       },
@@ -2093,7 +2093,7 @@
       },
       {
         "date": "2026-09-08",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -2143,7 +2143,7 @@
       },
       {
         "date": "2026-09-16",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 3
       },
@@ -2161,7 +2161,7 @@
       },
       {
         "date": "2026-09-19",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 6
       }
@@ -2169,7 +2169,7 @@
     [
       {
         "date": "2026-09-20",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 0
       },
@@ -2181,7 +2181,7 @@
       },
       {
         "date": "2026-09-22",
-        "contributionLevel": 3,
+        "contributionLevel": 2,
         "contributionCount": 4,
         "weekday": 2
       },
@@ -2193,13 +2193,13 @@
       },
       {
         "date": "2026-09-24",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 4
       },
       {
         "date": "2026-09-25",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 5
       },
@@ -2225,7 +2225,7 @@
       },
       {
         "date": "2026-09-29",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 2
       },
@@ -2263,7 +2263,7 @@
       },
       {
         "date": "2026-10-05",
-        "contributionLevel": 2,
+        "contributionLevel": 1,
         "contributionCount": 2,
         "weekday": 1
       },
@@ -2308,7 +2308,7 @@
       {
         "date": "2026-10-12",
         "contributionLevel": 4,
-        "contributionCount": 6,
+        "contributionCount": 8,
         "weekday": 1
       },
       {
@@ -2355,7 +2355,7 @@
       "languages": {
         "edges": [
           {
-            "size": 38495,
+            "size": 38648,
             "node": {
               "name": "Python",
               "color": "#3572A5"
