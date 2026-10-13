@@ -17,13 +17,13 @@
 </picture>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="./assets/readme/stats-mobile.svg">
-  <img src="./assets/readme/stats.svg" width="100%" alt="GitHub activity: contributions, active days, longest streak, and repositories; weekly counts and weekday distribution.">
+  <source media="(max-width: 600px)" srcset="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/stats-mobile.svg">
+  <img src="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/stats.svg" width="100%" alt="GitHub activity: contributions, active days, longest streak, and repositories; weekly counts and weekday distribution.">
 </picture>
 
 <picture>
-  <source media="(max-width: 600px)" srcset="./assets/readme/calendar-mobile.svg">
-  <img src="./assets/readme/calendar.svg" width="100%" alt="Twelve-month GitHub contribution heatmap, generated from the actual contribution calendar.">
+  <source media="(max-width: 600px)" srcset="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/calendar-mobile.svg">
+  <img src="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/calendar.svg" width="100%" alt="Twelve-month GitHub contribution heatmap, generated from the actual contribution calendar.">
 </picture>
 
 <a href="https://pratinaa.github.io/">
@@ -42,7 +42,7 @@
 
 <a href="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/#snake">
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/readme/snake-static.svg">
-  <img src="./assets/readme/snake.gif" width="100%" alt="Animated contribution snake generated from ctrl-pt’s actual GitHub contribution calendar.">
+  <source media="(prefers-reduced-motion: reduce)" srcset="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/snake-static.svg">
+  <img src="https://ctrl-pt-interactive-profile.silkypeach6.chatgpt.site/api/snake.svg" width="100%" alt="Animated contribution snake generated from ctrl-pt’s actual GitHub contribution calendar.">
 </picture>
 </a>

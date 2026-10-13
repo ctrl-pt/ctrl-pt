@@ -2,8 +2,13 @@ name: Refresh profile visuals
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/update-profile.yml'
   schedule:
-    - cron: '17 8 * * *'
+    - cron: '7,22,37,52 * * * *'
 
 permissions:
   contents: write
@@ -23,6 +28,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Read current public activity
         env:
           GITHUB_TOKEN: ${{ github.token }}

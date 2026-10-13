@@ -5,6 +5,7 @@ import datetime as dt
 import json
 import os
 import re
+import subprocess
 import urllib.request
 
 
@@ -13,16 +14,8 @@ USERNAME = os.environ.get("PROFILE_USERNAME", "ctrl-pt")
 QUERY = """
 query($login: String!) {
   user(login: $login) {
-    contributionsCollection {
-      startedAt
-      endedAt
-      contributionCalendar {
-        weeks {
-          contributionDays { date contributionCount weekday }
-        }
-      }
-    }
     repositories(first: 100, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
+      totalCount
       nodes {
         name
         url
@@ -70,20 +63,38 @@ def main():
     user = response.get("data", {}).get("user")
     if user is None:
         raise RuntimeError("GitHub account was not found; existing data was preserved.")
-    collection = user["contributionsCollection"]
+    # The public profile graph uses UTC. Share its exact parser with the live
+    # service instead of mixing authenticated GraphQL timezone boundaries.
+    public_request = urllib.request.Request(
+        "https://github.com/users/" + USERNAME + "/contributions",
+        headers={"User-Agent": "ctrl-pt-profile-refresh", "Accept": "text/html"},
+    )
+    with urllib.request.urlopen(public_request, timeout=30) as public_response:
+        calendar_html = public_response.read().decode("utf-8")
+    parsed = subprocess.run(
+        ["node", str(ROOT / "scripts" / "parse-calendar.mjs")],
+        input=calendar_html, text=True, capture_output=True, check=True,
+    )
+    calendar = json.loads(parsed.stdout)
+    days = [day for week in calendar["weeks"] for day in week]
+    if sum(day["contributionCount"] for day in days) != calendar["totalContributions"]:
+        raise RuntimeError("GitHub calendar totals disagree; existing data was preserved.")
+    if len({day["date"] for day in days}) != len(days):
+        raise RuntimeError("GitHub returned duplicate calendar dates; existing data was preserved.")
     data = {
         "snapshot": dt.datetime.now(dt.timezone.utc).date().isoformat(),
+        "fetchedAt": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "source": "github-public-calendar-and-api",
+        "totalContributions": calendar["totalContributions"],
+        "originalRepoCount": user["repositories"]["totalCount"],
         "account": {
             "login": account["login"],
             "followers": account["followers"],
             "public_repos": account["public_repos"],
         },
-        "weeks": [
-            week["contributionDays"]
-            for week in collection["contributionCalendar"]["weeks"]
-        ],
+        "weeks": calendar["weeks"],
         "repos": sorted(user["repositories"]["nodes"], key=lambda repo: repo["name"]),
-        "range": [collection["startedAt"], collection["endedAt"]],
+        "range": calendar["range"],
     }
     target = ROOT / "data" / "github.json"
     target.parent.mkdir(parents=True, exist_ok=True)

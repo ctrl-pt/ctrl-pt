@@ -169,7 +169,7 @@ def stats_art(t,mobile=False):
     cy=440 if mobile else 278
     s+=heading('weekly activity',38,cy)
     chart_y=cy+26;chart_h=157;chart_w=525 if mobile else 720
-    bars=STATS['weekly'][-26:];peak=max(bars) or 1
+    bars=STATS['weekly'];peak=max(bars) or 1
     pts=[]
     for i,count in enumerate(bars):
         x=40+i*chart_w/(len(bars)-1);yy=chart_y+chart_h-count/peak*chart_h
@@ -177,7 +177,7 @@ def stats_art(t,mobile=False):
         s+=box(x-5,chart_y+chart_h-count/peak*chart_h,10,max(2,count/peak*chart_h),T['b'],2)
     s+=line('M'+' L'.join(f'{x:.1f} {y:.1f}' for x,y in pts),T['a'],3)
     for y in [chart_y,chart_y+78,chart_y+157]:s+=line(f'M35 {y} H{35+chart_w}',T['muted'],.5,extra='opacity=".35"')
-    s+=text(39,chart_y+190,'26 weeks',21,T['muted'])+text(39+chart_w,chart_y+190,'max '+str(peak)+' / week',21,T['muted'],extra='text-anchor="end"')
+    s+=text(39,chart_y+190,str(len(bars))+' weeks',21,T['muted'])+text(39+chart_w,chart_y+190,'max '+str(peak)+' / week',21,T['muted'],extra='text-anchor="end"')
     cx=194 if mobile else 958;dy=840 if mobile else 378;r=93 if mobile else 79
     if mobile:s+=heading('Weekday mix',38,705)
     else:s+=heading('Weekday mix',856,271)
@@ -198,7 +198,11 @@ def stats_art(t,mobile=False):
 def blend(a,b,t):
     ax=[int(a[i:i+2],16) for i in [1,3,5]];bx=[int(b[i:i+2],16) for i in [1,3,5]]
     return '#'+''.join(f'{round(x+(y-x)*t):02x}' for x,y in zip(ax,bx))
-def heat_color(value):return T['panel'] if value==0 else blend(T['panel'],T['a'],.23+.77*value/max(STATS['peak_day'],1))
+def heat_color(value,level=None):
+    levels={'NONE':0,'FIRST_QUARTILE':1,'SECOND_QUARTILE':2,'THIRD_QUARTILE':3,'FOURTH_QUARTILE':4}
+    if isinstance(level,str):level=levels.get(level)
+    if level is not None:return T['panel'] if level==0 else blend(T['panel'],T['a'],.25*level)
+    return T['panel'] if value==0 else blend(T['panel'],T['a'],.23+.77*value/max(STATS['peak_day'],1))
 
 def calendar_art(t,mobile=False):
     global T
@@ -210,11 +214,11 @@ def calendar_art(t,mobile=False):
     for part,y in zip(parts,positions):
         for ix,week in enumerate(part):
             for day in week:
-                s+=box(40+ix*cell,y+day['weekday']*cell,dot,dot,heat_color(day['contributionCount']),3)
+                s+='<g><title>'+escape(day['date']+': '+str(day['contributionCount'])+' contributions')+'</title>'+box(40+ix*cell,y+day['weekday']*cell,dot,dot,heat_color(day['contributionCount'],day.get('contributionLevel')),3)+'</g>'
         s+=text(40,y-15,part[0][0]['date'][:7],20,T['muted'])+text(40+len(part)*cell,y-15,part[-1][-1]['date'][:7],20,T['muted'],extra='text-anchor="end"')
     y=555 if mobile else 285
     s+=text(41,y,str(STATS['total'])+' contributions',29,T['a'],700)
-    for i,value in enumerate([0,1,3,5,STATS['peak_day']]):s+=box(w-188+i*26,y-21,18,18,heat_color(value),3)
+    for i in range(5):s+=box(w-188+i*26,y-21,18,18,heat_color(i,i),3)
     s+=text(w-207,y+25,'less ← activity → more',19,T['muted'])
     return svg(s,w,610 if mobile else 345,'Contribution heatmap',ART_ALT['calendar'])
 
@@ -270,7 +274,9 @@ def snapshot(data):
     days=[d for week in data['weeks'] for d in week];streak=longest=0
     for d in days:
         streak=streak+1 if d['contributionCount'] else 0;longest=max(longest,streak)
-    return dict(total=sum(d['contributionCount'] for d in days),active_days=sum(d['contributionCount']>0 for d in days),longest_streak=longest,peak_day=max(d['contributionCount'] for d in days),public_repos=data['account']['public_repos'],followers=data['account']['followers'],originals=len(data['repos']),weekly=[sum(d['contributionCount'] for d in w) for w in data['weeks']],weekday=[sum(d['contributionCount'] for d in days if d['weekday']==i) for i in range(7)])
+    total=sum(d['contributionCount'] for d in days)
+    if total!=data.get('totalContributions',total):raise ValueError('GitHub calendar total mismatch')
+    return dict(total=total,active_days=sum(d['contributionCount']>0 for d in days),longest_streak=longest,peak_day=max(d['contributionCount'] for d in days),public_repos=data['account']['public_repos'],followers=data['account']['followers'],originals=data.get('originalRepoCount',len(data['repos'])),weekly=[sum(d['contributionCount'] for d in w) for w in data['weeks']],weekday=[sum(d['contributionCount'] for d in days if d['weekday']==i) for i in range(7)])
 
 def sample_md(t):
     prefix='../assets/'+t['id']+'-'
