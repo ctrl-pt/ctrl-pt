@@ -18,8 +18,10 @@ refreshes when opened, every three minutes while visible, and when revisited.
 An already-open GitHub README cannot stream new images; refresh the profile to
 request current graphics. GitHub processing and its image proxy can add delay.
 
-Every SVG shows a sync timestamp. Source failures retain verified data and mark
-it `STALE` or `FALLBACK`; unavailable data are never silently replaced by zeros.
+Collection timestamps and freshness remain available in JSON, response headers,
+and SVG accessible descriptions. The graphics have no visible sync footer.
+Source failures retain verified data marked `stale` or `fallback`;
+unavailable data are never silently replaced by zeros.
 No account credential is stored on the public statistics service.
 
 The `Refresh profile visuals` workflow maintains repository fallback assets and

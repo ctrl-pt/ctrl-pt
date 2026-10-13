@@ -5,8 +5,10 @@ import json
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
-data=json.loads((ROOT/'data/github.json').read_text())
-revision=str(int(dt.datetime.fromisoformat(data['fetchedAt'].replace('Z','+00:00')).timestamp()))
+data=json.loads((ROOT/'data/github.json').read_text(encoding='utf-8'))
+# Include the renderer revision so scheduled refreshes cannot reuse an older design.
+IMAGE_RENDER_REVISION='2'
+revision=str(int(dt.datetime.fromisoformat(data['fetchedAt'].replace('Z','+00:00')).timestamp()))+'-'+IMAGE_RENDER_REVISION
 path=ROOT/'README.md'
 pattern=re.compile(r'(https://ctrl-pt-interactive-profile\.silkypeach6\.chatgpt\.site/api/(?:stats(?:-mobile)?|calendar(?:-mobile)?|snake(?:-static)?)\.svg)(?:\?v=[^"\s]*)?')
 text=path.read_text(encoding='utf-8')
