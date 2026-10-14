@@ -1,13 +1,13 @@
 {
   "snapshot": "2026-10-14",
-  "fetchedAt": "2026-10-14T15:25:43.008594+00:00",
+  "fetchedAt": "2026-10-14T19:39:08.795547+00:00",
   "source": "github-public-calendar-and-api",
-  "totalContributions": 582,
-  "originalRepoCount": 3,
+  "totalContributions": 592,
+  "originalRepoCount": 8,
   "account": {
     "login": "ctrl-pt",
     "followers": 2,
-    "public_repos": 17
+    "public_repos": 22
   },
   "weeks": [
     [
@@ -2319,13 +2319,35 @@
       },
       {
         "date": "2026-10-14",
-        "contributionLevel": 0,
-        "contributionCount": 0,
+        "contributionLevel": 4,
+        "contributionCount": 10,
         "weekday": 3
       }
     ]
   ],
   "repos": [
+    {
+      "name": "airaware",
+      "url": "https://github.com/ctrl-pt/airaware",
+      "description": "A sample air-quality day planner with transparent illustrative data.",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "primaryLanguage": {
+        "name": "HTML",
+        "color": "#e34c26"
+      },
+      "languages": {
+        "edges": [
+          {
+            "size": 10402,
+            "node": {
+              "name": "HTML",
+              "color": "#e34c26"
+            }
+          }
+        ]
+      }
+    },
     {
       "name": "astr-19",
       "url": "https://github.com/ctrl-pt/astr-19",
@@ -2343,6 +2365,28 @@
             "node": {
               "name": "Python",
               "color": "#3572A5"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "billshield",
+      "url": "https://github.com/ctrl-pt/billshield",
+      "description": "Local simulation of cost guardrails for API-powered experiments.",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "primaryLanguage": {
+        "name": "HTML",
+        "color": "#e34c26"
+      },
+      "languages": {
+        "edges": [
+          {
+            "size": 11630,
+            "node": {
+              "name": "HTML",
+              "color": "#e34c26"
             }
           }
         ]
@@ -2386,6 +2430,72 @@
       "primaryLanguage": null,
       "languages": {
         "edges": []
+      }
+    },
+    {
+      "name": "neighborlink",
+      "url": "https://github.com/ctrl-pt/neighborlink",
+      "description": "A local-only mutual aid board prototype for offers and requests.",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "primaryLanguage": {
+        "name": "HTML",
+        "color": "#e34c26"
+      },
+      "languages": {
+        "edges": [
+          {
+            "size": 13573,
+            "node": {
+              "name": "HTML",
+              "color": "#e34c26"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "pantryloop",
+      "url": "https://github.com/ctrl-pt/pantryloop",
+      "description": "Local-first pantry meal ideas to help use food before it goes to waste.",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "primaryLanguage": {
+        "name": "HTML",
+        "color": "#e34c26"
+      },
+      "languages": {
+        "edges": [
+          {
+            "size": 12159,
+            "node": {
+              "name": "HTML",
+              "color": "#e34c26"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "safesteps",
+      "url": "https://github.com/ctrl-pt/safesteps",
+      "description": "Accessibility-first sample route comparison prototype.",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "primaryLanguage": {
+        "name": "HTML",
+        "color": "#e34c26"
+      },
+      "languages": {
+        "edges": [
+          {
+            "size": 11468,
+            "node": {
+              "name": "HTML",
+              "color": "#e34c26"
+            }
+          }
+        ]
       }
     }
   ],
