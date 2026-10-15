@@ -123,7 +123,7 @@ export function parseCalendar(html) {
   return { weeks: groupDays(days), totalContributions: total, range: [days[0].date, days[days.length - 1].date] };
 }
 
-function validateSnapshot(data) {
+export function validateSnapshot(data) {
   if (!data || data.account?.login?.toLowerCase() !== GITHUB_LOGIN || !Array.isArray(data.weeks) || !Array.isArray(data.repos)) {
     throw new Error('Invalid ctrl-pt snapshot');
   }

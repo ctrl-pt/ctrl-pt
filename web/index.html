@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071f2a">
+  <meta name="description" content="Pratinav A. — an interactive profile terminal and playable contribution-field snake.">
+  <title>ctrl-pt / interactive profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell">
+    <header class="page-header">
+      <a class="wordmark" href="https://github.com/ctrl-pt" aria-label="ctrl-pt on GitHub"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M2 8h8V2m16 18h-8v6M2 20h8v-6h8V8h8"/><circle cx="14" cy="14" r="3"/></svg><span>CTRL-PT<span class="submark"> / PROFILE</span></span></a>
+      <nav aria-label="Interactive modes"><a class="mode-link" href="#terminal" data-mode="terminal"><span aria-hidden="true">&gt;_</span> Terminal</a><a class="mode-link" href="#snake" data-mode="snake"><span aria-hidden="true">▦</span> Snake</a></nav>
+    </header>
+    <main id="main">
+      <section id="terminal-view" class="view" aria-labelledby="terminal-heading">
+        <h1 id="terminal-heading" class="sr-only">Interactive profile terminal</h1>
+        <div class="terminal-window">
+          <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>ctrl-pt@uci: ~ / profile</span><span class="window-symbol" aria-hidden="true">⌁</span></div>
+          <div class="identity">
+            <div class="identity-copy"><p class="prompt">$ whoami</p><p class="name">Pratinav A.</p><p class="role">CSE @ UCI / CLASS OF 2029</p><p class="focus">robotics · embedded · AI safety</p><p class="process">understand → build → test → iterate</p></div>
+            <div class="mascot-stage"><svg id="pixel-mascot" viewBox="0 0 180 210" role="img" aria-label="Circuit-colored pixel robot"><g class="mascot-traces" aria-hidden="true"><path d="M0 30h32v20h23m125 111h-24v24h-20M8 166h22v-26h20M142 31h21v40h17"/><circle cx="32" cy="30" r="3"/><circle cx="156" cy="161" r="3"/><circle cx="163" cy="31" r="3"/></g><g id="mascot-pixels" class="mascot-body"></g><g class="mascot-sparks" aria-hidden="true"><path d="M20 80h10m-5-5v10M145 139h10m-5-5v10M141 63h8m-4-4v8"/></g><path class="mascot-ground" d="M36 184h109"/></svg></div>
+          </div>
+          <div class="terminal-console">
+            <div id="terminal-output" class="terminal-output" role="log" aria-label="Command output" aria-live="polite" aria-relevant="additions"></div>
+            <form id="command-form" autocomplete="off"><label for="command-input" class="input-prompt"><span aria-hidden="true">$</span><span class="sr-only">Terminal command</span></label><input id="command-input" name="command" type="text" spellcheck="false" autocapitalize="off" maxlength="120" placeholder="type help" aria-describedby="terminal-hint"><button type="submit" class="run-button" aria-label="Run command">↵</button></form>
+          </div>
+        </div>
+        <div class="terminal-footer"><p id="terminal-hint"><span class="status-dot" aria-hidden="true"></span>Try a command</p><div class="command-chips" aria-label="Suggested commands"><button type="button" data-command="help">help</button><button type="button" data-command="skills">skills</button><button type="button" data-command="stats">stats</button><button type="button" data-command="projects">projects</button><button type="button" data-command="snake">snake</button></div></div>
+      </section>
+      <section id="snake-view" class="view" hidden aria-labelledby="snake-heading">
+        <div class="game-heading"><div><p class="eyebrow">CTRL-PT / PLAY</p><h1 id="snake-heading">Contribution snake<span class="accent">.</span></h1></div><svg class="snake-icon" viewBox="0 0 70 70" aria-hidden="true"><path d="M12 55h15V28h27V13H39"/><circle cx="39" cy="13" r="7"/><circle cx="39" cy="11" r="1.3"/></svg></div>
+        <div class="game-window">
+          <div class="game-toolbar"><div class="score-box"><span>SCORE</span><strong id="score">000</strong></div><div class="score-box"><span>BEST · THIS BROWSER</span><strong id="best-score">000</strong></div><p id="game-state" role="status" aria-live="polite">Ready</p></div>
+          <div class="board-wrap"><canvas id="game-board" width="960" height="576" tabindex="0" aria-label="Snake game board. Use arrow keys or W A S D to move. Space to pause or resume. Enter to start or restart." aria-describedby="game-help"></canvas><div id="game-overlay" class="game-overlay" aria-hidden="true"><div><span id="overlay-kicker">READY TO BUILD A STREAK?</span><strong id="overlay-title">Follow the signal.</strong><span id="overlay-detail">Start · move · collect</span></div></div></div>
+          <div class="game-controls"><button id="start-game" class="primary-button" type="button"><span aria-hidden="true">▷</span> Start</button><button id="pause-game" type="button" disabled><span aria-hidden="true">Ⅱ</span> Pause</button><button id="restart-game" type="button"><span aria-hidden="true">↻</span> Restart</button><span id="game-help">Arrows / WASD <span class="help-divider">·</span> Space to pause</span></div>
+        </div>
+        <div class="game-lower"><div class="field-card"><div class="field-heading"><span>GITHUB / CONTRIBUTION FIELD</span><span id="calendar-snapshot"></span></div><svg id="calendar" viewBox="0 0 530 80" role="img" aria-label="Actual GitHub contribution calendar"></svg><p id="calendar-caption"></p><p class="game-note">Game scores stay in this browser.</p></div><div class="touch-pad" role="group" aria-label="Snake direction controls"><button class="direction up" type="button" data-direction="up" aria-label="Move up">↑</button><button class="direction left" type="button" data-direction="left" aria-label="Move left">←</button><span aria-hidden="true">＋</span><button class="direction right" type="button" data-direction="right" aria-label="Move right">→</button><button class="direction down" type="button" data-direction="down" aria-label="Move down">↓</button></div></div>
+      </section>
+    </main>
+    <footer class="page-footer"><span class="footer-signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><a href="https://pratinaa.github.io/">Portfolio <span aria-hidden="true">↗</span></a><a href="https://github.com/ctrl-pt">GitHub <span aria-hidden="true">↗</span></a><span class="footer-coordinate">CSE / UCI ’29</span></footer>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

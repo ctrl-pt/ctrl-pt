@@ -6,12 +6,15 @@ on:
     branches: [main]
     paths:
       - 'scripts/**'
+      - 'web/**'
       - '.github/workflows/update-profile.yml'
   schedule:
     - cron: '7,22,37,52 * * * *'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: profile-visual-refresh
@@ -21,6 +24,9 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     env:
       PROFILE_USERNAME: ctrl-pt
     steps:
@@ -58,3 +64,14 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'chore: refresh profile visuals'
           git push
+      - name: Build the interactive profile and shared graphics
+        run: node scripts/build-pages.mjs
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publish GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
