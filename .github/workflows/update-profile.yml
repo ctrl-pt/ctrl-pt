@@ -43,6 +43,15 @@ jobs:
         run: python scripts/refresh-data.py
       - name: Generate profile SVGs
         run: python scripts/render_profile.py
+      - name: Refresh animated mascots when their source changes
+        run: |
+          if ! git diff --quiet -- assets/readme/hero.svg assets/readme/hero-mobile.svg assets/readme/hero-motion.json assets/readme/hero-mobile-motion.json || [ ! -s assets/readme/hero.gif ] || [ ! -s assets/readme/hero-mobile.gif ]; then
+            sudo apt-get update
+            sudo apt-get install -y librsvg2-bin ffmpeg
+            python -m pip install Pillow
+            python scripts/render_motion_gif.py assets/readme/hero.svg assets/readme/hero.gif --spec assets/readme/hero-motion.json
+            python scripts/render_motion_gif.py assets/readme/hero-mobile.svg assets/readme/hero-mobile.gif --spec assets/readme/hero-mobile-motion.json
+          fi
       - name: Regenerate the contribution snake
         uses: Platane/snk@v3
         with:

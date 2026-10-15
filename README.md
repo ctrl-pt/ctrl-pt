@@ -1,9 +1,9 @@
 <a href="https://ctrl-pt.github.io/ctrl-pt/#terminal">
 <picture>
-  <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="./assets/readme/hero-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/readme/hero.svg">
-  <source media="(max-width: 600px)" srcset="./assets/readme/hero-mobile.gif">
-  <img src="./assets/readme/hero.gif" width="100%" alt="Pratinav A. — UCI Computer Science &amp; Engineering, Class of 2029; robotics, embedded systems, AI safety">
+  <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="./assets/readme/hero-mobile.svg?v=mascot-float-1">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/readme/hero.svg?v=mascot-float-1">
+  <source media="(max-width: 600px)" srcset="./assets/readme/hero-mobile.gif?v=mascot-float-1">
+  <img src="./assets/readme/hero.gif?v=mascot-float-1" width="100%" alt="Pratinav A. — UCI Computer Science &amp; Engineering, Class of 2029; robotics, embedded systems, AI safety">
 </picture>
 </a>
 

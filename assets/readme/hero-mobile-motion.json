@@ -1,51 +1,22 @@
 {
   "width": 600,
   "fps": 30,
-  "duration": 5.2,
-  "colors": 192,
+  "duration": 5.0,
+  "colors": 256,
   "dither": "none",
   "clip_to_base_alpha": true,
   "max_size_mb": 2,
-  "reveals": [
-    {
-      "id": "role-line",
-      "axis": "x",
-      "start": 0.25,
-      "end": 1.35,
-      "exit": {
-        "start": 4.55,
-        "end": 5.05
-      }
-    },
-    {
-      "id": "spark-path",
-      "axis": "x",
-      "start": 0.75,
-      "end": 1.7,
-      "exit": {
-        "start": 4.55,
-        "end": 5.05
-      }
-    }
-  ],
+  "reveals": [],
   "layers": [
     {
-      "id": "motif",
-      "enter": {
-        "start": 0.45,
-        "end": 1.45,
-        "from": [
-          15,
-          -7
-        ]
-      },
-      "exit": {
-        "start": 4.55,
-        "end": 5.05,
-        "to": [
-          5,
-          0
-        ]
+      "id": "mascot-pixels",
+      "float": {
+        "period": 5.0,
+        "offset": [
+          0,
+          -4.5
+        ],
+        "easing": "ease-in-out"
       }
     }
   ]
