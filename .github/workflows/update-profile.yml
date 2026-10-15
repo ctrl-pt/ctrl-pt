@@ -54,7 +54,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Create reduced-motion snake
         run: python scripts/freeze_snake.py
-      - name: Refresh live image proxy revisions
+      - name: Refresh Pages image proxy revisions
         run: python scripts/update-image-revision.py
       - name: Commit refreshed visual assets
         run: |
