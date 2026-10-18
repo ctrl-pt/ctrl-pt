@@ -6,6 +6,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 import urllib.request
 
 
@@ -73,8 +74,11 @@ def main():
         calendar_html = public_response.read().decode("utf-8")
     parsed = subprocess.run(
         ["node", str(ROOT / "scripts" / "parse-calendar.mjs")],
-        input=calendar_html, text=True, capture_output=True, check=True,
+        input=calendar_html, text=True, capture_output=True,
     )
+    if parsed.stderr:
+        print(parsed.stderr.rstrip(), file=sys.stderr)
+    parsed.check_returncode()
     calendar = json.loads(parsed.stdout)
     days = [day for week in calendar["weeks"] for day in week]
     if sum(day["contributionCount"] for day in days) != calendar["totalContributions"]:

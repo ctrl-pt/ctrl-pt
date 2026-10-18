@@ -37,6 +37,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Check contribution calendar parser
+        run: node --test scripts/github-live.test.mjs
       - name: Read current public activity
         env:
           GITHUB_TOKEN: ${{ github.token }}

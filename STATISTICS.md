@@ -34,6 +34,10 @@ the first page length. The Pages build reuses the original site's SVG renderers,
 including the snake that eats active contribution cells and its reduced-motion
 still. Collection timestamps remain in JSON and SVG accessible descriptions.
 
+Contribution totals are summed from the exact counts in the displayed calendar.
+GitHub's heading can briefly retain the previous week's total after a Sunday
+rollover; that mismatch is logged without blocking a valid calendar refresh.
+
 Each refresh advances the six Pages image query revisions in the README so
 GitHub can retire older image-proxy copies. An already-open profile does not
 stream new images; reload it to request updated graphics. GitHub Pages caches

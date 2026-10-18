@@ -91,6 +91,7 @@ export function parseCalendar(html) {
     }
   }
   if (total === null) throw new Error('Missing contribution total');
+  nonnegativeInteger(total, 'contribution total');
   const cells = new Map();
   const dates = new Set();
   for (const match of html.matchAll(/<td\b([^>]*)>/gi)) {
@@ -119,8 +120,15 @@ export function parseCalendar(html) {
   }
   const days = [...cells.values()];
   if (days.some(day => day.contributionCount === null)) throw new Error('Missing contribution tooltip');
-  validateDays(days, total);
-  return { weeks: groupDays(days), totalContributions: total, range: [days[0].date, days[days.length - 1].date] };
+  // GitHub can retain the previous week's heading total after the grid rolls
+  // forward on Sunday. Use the exact daily counts for the displayed range so
+  // every widget describes the same dates, while still validating the grid.
+  const calendarTotal = days.reduce((sum, day) => sum + nonnegativeInteger(day.contributionCount, 'contribution count'), 0);
+  validateDays(days, calendarTotal);
+  if (calendarTotal !== total) {
+    console.warn(`GitHub contribution heading reports ${total}; using ${calendarTotal} from the displayed calendar (${days[0].date} to ${days[days.length - 1].date}).`);
+  }
+  return { weeks: groupDays(days), totalContributions: calendarTotal, range: [days[0].date, days[days.length - 1].date] };
 }
 
 export function validateSnapshot(data) {
