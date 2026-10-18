@@ -1,8 +1,8 @@
 {
-  "snapshot": "2026-10-17",
-  "fetchedAt": "2026-10-17T23:01:49.330503+00:00",
+  "snapshot": "2026-10-18",
+  "fetchedAt": "2026-10-18T22:07:18.608214+00:00",
   "source": "github-public-calendar-and-api",
-  "totalContributions": 598,
+  "totalContributions": 584,
   "originalRepoCount": 9,
   "account": {
     "login": "ctrl-pt",
@@ -10,50 +10,6 @@
     "public_repos": 23
   },
   "weeks": [
-    [
-      {
-        "date": "2025-10-12",
-        "contributionLevel": 0,
-        "contributionCount": 0,
-        "weekday": 0
-      },
-      {
-        "date": "2025-10-13",
-        "contributionLevel": 2,
-        "contributionCount": 3,
-        "weekday": 1
-      },
-      {
-        "date": "2025-10-14",
-        "contributionLevel": 2,
-        "contributionCount": 3,
-        "weekday": 2
-      },
-      {
-        "date": "2025-10-15",
-        "contributionLevel": 0,
-        "contributionCount": 0,
-        "weekday": 3
-      },
-      {
-        "date": "2025-10-16",
-        "contributionLevel": 3,
-        "contributionCount": 5,
-        "weekday": 4
-      },
-      {
-        "date": "2025-10-17",
-        "contributionLevel": 2,
-        "contributionCount": 4,
-        "weekday": 5
-      },
-      {
-        "date": "2025-10-18",
-        "contributionLevel": 0,
-        "contributionCount": 0,
-        "weekday": 6
-      }
-    ],
     [
       {
         "date": "2025-10-19",
@@ -2341,6 +2297,14 @@
         "contributionCount": 0,
         "weekday": 6
       }
+    ],
+    [
+      {
+        "date": "2026-10-18",
+        "contributionLevel": 1,
+        "contributionCount": 1,
+        "weekday": 0
+      }
     ]
   ],
   "repos": [
@@ -2417,20 +2381,20 @@
       "stargazerCount": 0,
       "forkCount": 0,
       "primaryLanguage": {
-        "name": "Python",
-        "color": "#3572A5"
+        "name": "JavaScript",
+        "color": "#f1e05a"
       },
       "languages": {
         "edges": [
           {
-            "size": 61500,
+            "size": 61606,
             "node": {
               "name": "Python",
               "color": "#3572A5"
             }
           },
           {
-            "size": 58688,
+            "size": 62594,
             "node": {
               "name": "JavaScript",
               "color": "#f1e05a"
@@ -2547,7 +2511,7 @@
     }
   ],
   "range": [
-    "2025-10-12",
-    "2026-10-17"
+    "2025-10-19",
+    "2026-10-18"
   ]
 }
