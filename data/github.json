@@ -1,8 +1,8 @@
 {
-  "snapshot": "2026-10-24",
-  "fetchedAt": "2026-10-24T22:00:14.556863+00:00",
+  "snapshot": "2026-10-25",
+  "fetchedAt": "2026-10-25T00:14:19.707455+00:00",
   "source": "github-public-calendar-and-api",
-  "totalContributions": 587,
+  "totalContributions": 569,
   "originalRepoCount": 10,
   "account": {
     "login": "ctrl-pt",
@@ -10,50 +10,6 @@
     "public_repos": 24
   },
   "weeks": [
-    [
-      {
-        "date": "2025-10-19",
-        "contributionLevel": 0,
-        "contributionCount": 0,
-        "weekday": 0
-      },
-      {
-        "date": "2025-10-20",
-        "contributionLevel": 1,
-        "contributionCount": 2,
-        "weekday": 1
-      },
-      {
-        "date": "2025-10-21",
-        "contributionLevel": 2,
-        "contributionCount": 4,
-        "weekday": 2
-      },
-      {
-        "date": "2025-10-22",
-        "contributionLevel": 3,
-        "contributionCount": 6,
-        "weekday": 3
-      },
-      {
-        "date": "2025-10-23",
-        "contributionLevel": 2,
-        "contributionCount": 4,
-        "weekday": 4
-      },
-      {
-        "date": "2025-10-24",
-        "contributionLevel": 1,
-        "contributionCount": 2,
-        "weekday": 5
-      },
-      {
-        "date": "2025-10-25",
-        "contributionLevel": 0,
-        "contributionCount": 0,
-        "weekday": 6
-      }
-    ],
     [
       {
         "date": "2025-10-26",
@@ -2341,6 +2297,14 @@
         "contributionCount": 0,
         "weekday": 6
       }
+    ],
+    [
+      {
+        "date": "2026-10-25",
+        "contributionLevel": 0,
+        "contributionCount": 0,
+        "weekday": 0
+      }
     ]
   ],
   "repos": [
@@ -2569,7 +2533,7 @@
     }
   ],
   "range": [
-    "2025-10-19",
-    "2026-10-24"
+    "2025-10-26",
+    "2026-10-25"
   ]
 }
