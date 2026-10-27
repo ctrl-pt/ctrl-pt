@@ -1,13 +1,13 @@
 {
   "snapshot": "2026-10-27",
-  "fetchedAt": "2026-10-27T06:11:09.635854+00:00",
+  "fetchedAt": "2026-10-27T12:24:41.396981+00:00",
   "source": "github-public-calendar-and-api",
-  "totalContributions": 569,
-  "originalRepoCount": 10,
+  "totalContributions": 572,
+  "originalRepoCount": 11,
   "account": {
     "login": "ctrl-pt",
     "followers": 3,
-    "public_repos": 24
+    "public_repos": 25
   },
   "weeks": [
     [
@@ -2307,14 +2307,14 @@
       },
       {
         "date": "2026-10-26",
-        "contributionLevel": 0,
-        "contributionCount": 0,
+        "contributionLevel": 1,
+        "contributionCount": 2,
         "weekday": 1
       },
       {
         "date": "2026-10-27",
-        "contributionLevel": 0,
-        "contributionCount": 0,
+        "contributionLevel": 1,
+        "contributionCount": 1,
         "weekday": 2
       }
     ]
@@ -2450,6 +2450,35 @@
             "node": {
               "name": "HTML",
               "color": "#e34c26"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ics6d-recursion-study-guide",
+      "url": "https://github.com/ctrl-pt/ics6d-recursion-study-guide",
+      "description": "Concise, interactive ICS 6D guide to recursion and induction, with original practice and a timed exam check.",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "primaryLanguage": {
+        "name": "JavaScript",
+        "color": "#f1e05a"
+      },
+      "languages": {
+        "edges": [
+          {
+            "size": 3557,
+            "node": {
+              "name": "HTML",
+              "color": "#e34c26"
+            }
+          },
+          {
+            "size": 33970,
+            "node": {
+              "name": "JavaScript",
+              "color": "#f1e05a"
             }
           }
         ]
