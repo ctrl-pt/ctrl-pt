@@ -1,13 +1,13 @@
 {
   "snapshot": "2026-11-04",
-  "fetchedAt": "2026-11-04T17:48:54.960554+00:00",
+  "fetchedAt": "2026-11-04T22:51:35.364817+00:00",
   "source": "github-public-calendar-and-api",
-  "totalContributions": 566,
-  "originalRepoCount": 12,
+  "totalContributions": 575,
+  "originalRepoCount": 8,
   "account": {
     "login": "ctrl-pt",
     "followers": 2,
-    "public_repos": 26
+    "public_repos": 22
   },
   "weeks": [
     [
@@ -2320,7 +2320,7 @@
       {
         "date": "2026-11-04",
         "contributionLevel": 4,
-        "contributionCount": 10,
+        "contributionCount": 19,
         "weekday": 3
       }
     ]
@@ -2440,100 +2440,6 @@
       }
     },
     {
-      "name": "ics45c-study-hub",
-      "url": "https://github.com/ctrl-pt/ics45c-study-hub",
-      "description": "ICS 45C study hub: 1,017 questions, Leitner cramming, latest FSRS-7 scheduling, persistent progress, and recoverable backups",
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "primaryLanguage": {
-        "name": "JavaScript",
-        "color": "#f1e05a"
-      },
-      "languages": {
-        "edges": [
-          {
-            "size": 596,
-            "node": {
-              "name": "HTML",
-              "color": "#e34c26"
-            }
-          },
-          {
-            "size": 2412,
-            "node": {
-              "name": "Python",
-              "color": "#3572A5"
-            }
-          },
-          {
-            "size": 28545,
-            "node": {
-              "name": "JavaScript",
-              "color": "#f1e05a"
-            }
-          },
-          {
-            "size": 3714,
-            "node": {
-              "name": "PLpgSQL",
-              "color": "#336790"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name": "ics45c-week-3-practice",
-      "url": "https://github.com/ctrl-pt/ics45c-week-3-practice",
-      "description": "Simple practice quiz for ICS45C Reading Quiz Week 3",
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "primaryLanguage": {
-        "name": "HTML",
-        "color": "#e34c26"
-      },
-      "languages": {
-        "edges": [
-          {
-            "size": 16805,
-            "node": {
-              "name": "HTML",
-              "color": "#e34c26"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name": "ics6d-recursion-study-guide",
-      "url": "https://github.com/ctrl-pt/ics6d-recursion-study-guide",
-      "description": "Concise, interactive ICS 6D guide to recursion and induction, with original practice and a timed exam check.",
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "primaryLanguage": {
-        "name": "JavaScript",
-        "color": "#f1e05a"
-      },
-      "languages": {
-        "edges": [
-          {
-            "size": 3557,
-            "node": {
-              "name": "HTML",
-              "color": "#e34c26"
-            }
-          },
-          {
-            "size": 33970,
-            "node": {
-              "name": "JavaScript",
-              "color": "#f1e05a"
-            }
-          }
-        ]
-      }
-    },
-    {
       "name": "neighborlink",
       "url": "https://github.com/ctrl-pt/neighborlink",
       "description": "A local-only mutual aid board prototype for offers and requests.",
@@ -2569,28 +2475,6 @@
         "edges": [
           {
             "size": 12159,
-            "node": {
-              "name": "HTML",
-              "color": "#e34c26"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name": "reading-quiz-week-2",
-      "url": "https://github.com/ctrl-pt/reading-quiz-week-2",
-      "description": "Simple C++ Week 2 reading quiz with 27 open-ended questions and answer reveals.",
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "primaryLanguage": {
-        "name": "HTML",
-        "color": "#e34c26"
-      },
-      "languages": {
-        "edges": [
-          {
-            "size": 19129,
             "node": {
               "name": "HTML",
               "color": "#e34c26"
