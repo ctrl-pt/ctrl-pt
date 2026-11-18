@@ -1,13 +1,13 @@
 {
   "snapshot": "2026-11-18",
-  "fetchedAt": "2026-11-18T16:31:39.572095+00:00",
+  "fetchedAt": "2026-11-18T23:03:42.769806+00:00",
   "source": "github-public-calendar-and-api",
-  "totalContributions": 570,
-  "originalRepoCount": 8,
+  "totalContributions": 572,
+  "originalRepoCount": 9,
   "account": {
     "login": "ctrl-pt",
     "followers": 2,
-    "public_repos": 22
+    "public_repos": 23
   },
   "weeks": [
     [
@@ -2319,8 +2319,8 @@
       },
       {
         "date": "2026-11-18",
-        "contributionLevel": 0,
-        "contributionCount": 0,
+        "contributionLevel": 1,
+        "contributionCount": 2,
         "weekday": 3
       }
     ]
@@ -2456,6 +2456,63 @@
             "node": {
               "name": "HTML",
               "color": "#e34c26"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "old-shell-shockers-remake",
+      "url": "https://github.com/ctrl-pt/old-shell-shockers-remake",
+      "description": "Preserved Shell Shockers with fourteen classic maps, public browser client, and locally hosted multiplayer.",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "primaryLanguage": {
+        "name": "HTML",
+        "color": "#e34c26"
+      },
+      "languages": {
+        "edges": [
+          {
+            "size": 266,
+            "node": {
+              "name": "Dockerfile",
+              "color": "#384d54"
+            }
+          },
+          {
+            "size": 660,
+            "node": {
+              "name": "Batchfile",
+              "color": "#C1F12E"
+            }
+          },
+          {
+            "size": 516105,
+            "node": {
+              "name": "HTML",
+              "color": "#e34c26"
+            }
+          },
+          {
+            "size": 48514,
+            "node": {
+              "name": "CSS",
+              "color": "#663399"
+            }
+          },
+          {
+            "size": 354863,
+            "node": {
+              "name": "JavaScript",
+              "color": "#f1e05a"
+            }
+          },
+          {
+            "size": 14046,
+            "node": {
+              "name": "Python",
+              "color": "#3572A5"
             }
           }
         ]
